@@ -63,32 +63,27 @@
             <img src="https://badges.toozhao.com/badges/01HFXP6JKNBG5AW3Y5B95DK568/blue.svg" />
             <!-- </div> -->
             <p>
-              BIRD (<b>BI</b>g Bench for La<b>R</b>ge-scale <b>D</b>atabase Grounded Text-to-SQL Evaluation) represents
-              a pioneering, cross-domain dataset that examines the impact of extensive database contents on text-to-SQL
-              parsing.
+              Spider2: A Realistic and Challenging Benchmark for SQL Generation.
               <!-- The dataset includes three extra problems that especially resonates with real-world scenarios:
               <b>1)</b> the necessity to incorporate external knowledge into parsers; <b>2)</b> the need for parsers to
               reason over 'dirty' values;
               and <b>3)</b> the requirment to consider efficiency while executing SQLs.  -->
-              BIRD contains over <b>12,751</b>
-              unique question-SQL pairs, <b>95</b> big databases with a total size of <b>33.4 GB</b>.
-              It also covers more than <b>37</b> professional domains, such as blockchain, hockey, healthcare and
-              education, etc.
+              Spider2 contains over <b>500</b> examples.
             </p>
             <div id="button-group">
               <div class="button-row">
-                <a href="https://arxiv.org/pdf/2305.03111.pdf" target="_blank">
+                <a href="https://arxiv.org/abs/2404.07972" target="_blank">
                   <button type="button" class="btn  btn-a">Paper</button>
                 </a>
               </div>
               <div class="button-row">
-                <a href="https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/bird" target="_blank">
+                <a href="https://github.com/xlang-ai/Spider2" target="_blank">
                   <button type="button" class="btn btn-a">
                     Code
                   </button>
                 </a>
               </div>
-              <div class="button-row">  
+              <!-- <div class="button-row">  
                 <a href="https://github.com/bird-bench/mini_dev" target="_blank">
                   <button type="button" class="btn btn-d">Mini-Dev (500)</button> 
                 </a>
@@ -104,7 +99,8 @@
                     <button type="button" class="btn btn-b">🔥 Dev Set</button>
                   </a>
                 </div>
-              </div>
+              </div> -->
+  
             </div>
           </div>
           <style>  
@@ -170,24 +166,18 @@
             </div>
           </div>
           <div class="list-group-item" id="illustration">
-            <h4>Surprise from BIRD</h4>
+            <h4>Surprise from Spider2</h4>
             <p>
-              <b>1. Large and Dirty values:</b> Due to the nature of the real-world scenarios from which BIRD's database
-              values were collected, they typically retain their original and frequently "dirty" format. Hence,
-              text-to-SQL parsers must first analyze these values to account for their non-standard format before
-              engaging in reasoning.
+              <b>1. Complex databases:</b> dfdf
             </p>
-            <img src="./img/dirty_1.png" class="column-img" id="dirty-img-1" style="margin:0 auto;" />
-            <img src="./img/dirty_2.png" class="column-img" id="dirty-img-2" style="margin:0 auto;" />
+            <!-- <img src="./img/dirty_1.png" class="column-img" id="dirty-img-1" style="margin:0 auto;" />
+            <img src="./img/dirty_2.png" class="column-img" id="dirty-img-2" style="margin:0 auto;" /> -->
             <p>
-              <b>2. External Knowledge:</b> "account.type = 'OWNER'" can be inferred by the knowledge evidence: "The
-              condition of the loans require the account type should be the owner."
+              <b>2. Realistic SQLs and Tasks:</b> dfdfd
             </p>
-            <img src="./img/ex_kg_2.png" class="column-img" id="kg-img" style="margin:0 auto;" />
+            <!-- <img src="./img/ex_kg_2.png" class="column-img" id="kg-img" style="margin:0 auto;" /> -->
             <p>
-              <b>3. Text-to-Efficient-SQL:</b> BIRD is the first text-to-SQL benchmark designed to encourage semantic
-              parsers to produce SQL queries that are not only correct but also efficient. This emphasis on efficiency
-              is especially valuable in real-world data / business analysis circumstances.
+              <b>3. Real scenarios and project level tasks:</b> dfdf
             </p>
             <img src="./img/efficient_sql.png" class="column-img" id="eff-img" style="margin:0 auto;" />
           </div>
@@ -198,7 +188,7 @@
               <a href="https://bird-bench.github.io/"><button type="button" class="btn btn-success", id="code">BIRD Code Nest</button></a>
             </p>
           </div> -->
-          <div class="list-group-item">
+          <!-- <div class="list-group-item">
             <h4>Submission</h4>
             <p>Please follow the Submission Guideline (below) and contact <code>bird.bench23@gmail.com</code> for test evaluation. Ususally, we will return your results in 10 days!
              
@@ -216,9 +206,9 @@
                 <button type="button" class="btn  btn-a">Submission Guidelines</button>
               </a>
             </div>
-          </div>
+          </div> -->
           
-          <div class="list-group-item">
+          <!-- <div class="list-group-item">
             <h4>Subscribe to BIRD Update</h4>  
             <p>Bird is a long-term research project aimed at bridging the gap between semantic parsing models and the success of database applications. To receive the latest updates of the dataset, you can leave your email address.
             </p>
@@ -227,9 +217,9 @@
                 <button type="submit">Subscribe</button>  
             </form>  
             <p id="message"></p>  
-          </div> 
+          </div>  -->
           
-          <head>  
+          <!-- <head>  
               <meta charset="utf-8">  
               <title>Email Subscription</title>  
               <script>  
@@ -256,27 +246,7 @@
                   return false;  
                 }  
               </script>  
-          </head>   
-          <div class="list-group-item">
-            <h4>Citation</h4>
-            <!-- <pre id="citation">
-@misc{li2023llm,
-  title={Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs},
-  author={Jinyang Li and Binyuan Hui and Ge Qu and Binhua Li and Jiaxi Yang and Bowen Li and Bailin Wang and Bowen Qin and Rongyu Cao and Ruiying Geng and Nan Huo and Chenhao Ma and Kevin C. C. Chang and Fei Huang and Reynold Cheng and Yongbin Li},
-  year={2023},
-  eprint={2305.03111},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL}
-}</pre> -->
-            <pre id="citation">
-@article{li2024can,
-  title={Can llm already serve as a database interface? a big bench for large-scale database grounded text-to-sqls},
-  author={Li, Jinyang and Hui, Binyuan and Qu, Ge and Yang, Jiaxi and Li, Binhua and Li, Bowen and Wang, Bailin and Qin, Bowen and Geng, Ruiying and Huo, Nan and others},
-  journal={Advances in Neural Information Processing Systems},
-  volume={36},
-  year={2024}
-}</pre>
-          </div>
+          </head>    -->
         </div>
       </div>
 
