@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Spider2">
+  <meta name="author" content="">
+  <title>Spider2</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./style/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="./style/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./style/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="./style/clean-blog.min.css" rel="stylesheet">
+  <link href="./style/bird.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <header class="masthead" id="header-color">
+    <div style="background-color: #485159; text-align: left;">
+      <img style="margin-top: 5px; padding: 15px;" height="70px" src="./logo/hku.png">
+      <img style="margin-top: 5px; padding: 15px;" height="70px" src="./logo/xlangai.png">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-md-12 mx-auto">
+          <div class="row site-heading flex-box">
+            <div class="col-lg-3">
+              <img id="logo-img" src="logo/bird_fig_main.png" alt="logo" />
+            </div>
+            <div class="col-lg-9">
+              <div class="align-middle">
+                <h1 id="bird-title">
+                  Spider2
+                </h1>
+                <span class="subheading" id="caption">A Realistic and Challenging Benchmark for SQL Generation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Main Content -->
+  <div class="container" id="main">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="list-group">
+          <div class="list-group-item" id="introduction">
+            <!-- <div style="display: grid; grid-template-columns: auto auto; align-items: center;"> -->
+            <h4>About Spider2</h4>
+            <img src="https://badges.toozhao.com/badges/01HFXP6JKNBG5AW3Y5B95DK568/blue.svg" />
+            <!-- </div> -->
+            <p>
+              BIRD (<b>BI</b>g Bench for La<b>R</b>ge-scale <b>D</b>atabase Grounded Text-to-SQL Evaluation) represents
+              a pioneering, cross-domain dataset that examines the impact of extensive database contents on text-to-SQL
+              parsing.
+              <!-- The dataset includes three extra problems that especially resonates with real-world scenarios:
+              <b>1)</b> the necessity to incorporate external knowledge into parsers; <b>2)</b> the need for parsers to
+              reason over 'dirty' values;
+              and <b>3)</b> the requirment to consider efficiency while executing SQLs.  -->
+              BIRD contains over <b>12,751</b>
+              unique question-SQL pairs, <b>95</b> big databases with a total size of <b>33.4 GB</b>.
+              It also covers more than <b>37</b> professional domains, such as blockchain, hockey, healthcare and
+              education, etc.
+            </p>
+            <div id="button-group">
+              <div class="button-row">
+                <a href="https://arxiv.org/pdf/2305.03111.pdf" target="_blank">
+                  <button type="button" class="btn  btn-a">Paper</button>
+                </a>
+              </div>
+              <div class="button-row">
+                <a href="https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/bird" target="_blank">
+                  <button type="button" class="btn btn-a">
+                    Code
+                  </button>
+                </a>
+              </div>
+              <div class="button-row">  
+                <a href="https://github.com/bird-bench/mini_dev" target="_blank">
+                  <button type="button" class="btn btn-d">Mini-Dev (500)</button> 
+                </a>
+              </div> 
+              <div class="button-row" id="button-row-b">
+                <div class="btn-round">
+                  <a href="https://bird-bench.oss-cn-beijing.aliyuncs.com/train.zip" target="_blank">
+                    <button type="button" class="btn btn-b">Train Set</button>
+                  </a>
+                </div>
+                <div class="btn-round">
+                  <a href="https://bird-bench.oss-cn-beijing.aliyuncs.com/dev.zip" target="_blank">
+                    <button type="button" class="btn btn-b">🔥 Dev Set</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <style>  
+            .scroll-container {  
+              position: relative;  
+              width: 100%;  
+              max-height: 300px;  
+              overflow-y: scroll;  
+            }  
+              
+            /* Hide the scrollbar by default */  
+            .scroll-container::-webkit-scrollbar {  
+                width: 10px;  
+                background: transparent;
+            }  
+              
+            /* Set the scrollbar thumb color */  
+            .scroll-container::-webkit-scrollbar-thumb {  
+                background-color: #FFFFFF;  
+                border-radius: 5px;  
+            }  
+              
+            /* Show the scrollbar when the mouse is hovering over the scroll container */  
+            .scroll-container:hover::-webkit-scrollbar {  
+                width: 10px;  
+            }  
+              
+            .scroll-container:hover::-webkit-scrollbar-thumb:hover {  
+                background-color: #555;  
+            }  
+            
+          </style>
+          <script>  
+            function showMiniDevMessage() {  
+              alert("Coming Soon: Mini-Dev! Dive into 500 top-tier SQL cases covering all keywords in BIRD, including advanced window functions. For the first time, we're also including PostgreSQL and MySQL. Stay ahead and subscribe us for the immediate launch.");  
+            }  
+          </script>  
+          
+          <div class="list-group-item" id="news">
+            <h4>News</h4>
+            
+            <div class="scroll-container">  
+              <div class="card card-outline-secondary mb-4" style="text-align: left;">                      
+                  <div class="card-body" style="background-color: #F1F6F9;">  
+                      <ul style="padding-left: 0;">
+<!--                           <li style="list-style-type: none;"><span style="background-color: #22A699; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #FFE7CE">May. 27, 2024:</strong></span> Glad to share our paper <a href="https://arxiv.org/abs/2405.15307">Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation (TA-SQL)</a>, which will appear at <code><strong>ACL 2024</strong></code> Findings. This is a light but effective method to calbriate hallucinations of text-to-SQL generation. Additionally, we firstly introduce Pythonic prompts for text-to-SQL and include results on open-source LLMs.</li> -->
+                           <li style="list-style-type: none;"><span style="background-color: #22A699; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #FFE7CE">Jun. 30, 2024:</strong></span>Due to large requests of test submissions about mixed models (open-source + GPU-based closed source), we update the submission instructions to accelerate your waiting time. Please check it out!</li>
+                          <li style="list-style-type: none;"><span style="background-color: #22A699; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #FFE7CE">Jun. 27, 2024:</strong></span> Excited to announce the release of our <a ref="https://github.com/bird-bench/mini_dev/tree/main">BIRD Mini-Dev dataset</a> with 500 high-quality examples. This dataset includes all BIRD keywords, with modifications for questions such as the addition of <code>window function</code>. We are the first to deliver it in not only <strong>SQLite</strong>, but also <strong>MySQL</strong>, and <strong>PostgreSQL</strong>. We include Soft-F1 and R-VES metrics to reduce bias. Don't miss the <code>column_meaning.json</code> file, preprocessed by TA-SQL. Available for dev and testing set. Check out our work here: <a href="https://arxiv.org/abs/2405.15307">Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation (TA-SQL)</a>, appearing at <code><strong>ACL 2024</strong></code> Findings.</li>
+                          <li style="list-style-type: none;"><span style="background-color: #22A699; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #FFE7CE">Apr. 27, 2024:</strong></span> Due to large volume of requests, we now modify the license of our data to <code><strong>CC BY-SA 4.0</strong></code>. However, we will not take responsibility of any bad purposes by using our data. Since we develop this benchmark for research and healthy application only.</li>
+                          <li style="list-style-type: none;"><span style="background-color: #4F709C; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #FFE7CE">Mar 13, 2024:</strong></span> Please also take a look at our related work: <a href="https://arxiv.org/abs/2403.05307">Tapilot-Crossing</a>, which is the first challenging and more realistic benchmark designed to evaluate Large Language Model (LLM) agents on interactive data analysis tasks. The code includes Python and Private Library. And it covers 6 common agent actions in evaluation.</li>
+                          <li style="list-style-type: none;"><span style="background-color: #4F709C; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #FFE7CE">Sept 25, 2023:</strong></span> We have released a cleaner version of <code>dev set</code>. Please download dev set again. We checked all cases of dev set and fixed all errors that we found. After cleaning, the ChatGPT (gpt-3.5-turbo) and GPT4 (gpt-4-32k) EX scores have improved to <strong>42.24</strong> (from 37.22) and <strong>49.15</strong> (from 46.35), respectively. Thanks for all feedbacks!</li>
+                          <li style="list-style-type: none;"><span style="background-color: #4F709C; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #FFE7CE">Sept 21, 2023:</strong></span> Our paper has been accepted by <code><strong>NeurIPS 2023</strong></code> as a <code><strong>Spotlight</strong></code>!!! Thanks for all the efforts and suggestions of co-authors, anonymous reviewers, awesome researchers/users in github or emails.</li> 
+                          <li style="list-style-type: none;"><span style="background-color: #4F709C; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #F6F1F1">July 17, 2023:</strong></span> We update newest results of GPT-4, Claude-2 and Palm-2. </li>  
+                          <li style="list-style-type: none;"><span style="background-color: #4F709C; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #F6F1F1">July 14, 2023:</strong></span> The data link has been updated, fixing the schema names in the CSV files. Additionally, tied results caused by <code>order_by limit 1</code> are now considered. Both SQL queries - with and without accounting for tied results -  
+                              are valid at this time.</li>
+                          <li style="list-style-type: none;"><span style="background-color: #4F709C; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #F6F1F1">Jun 12, 2023:</strong></span> We are welcome to any suggestions and reported gold errors in <a href="https://github.com/AlibabaResearch/DAMO-ConvAI/issues/39">help_wanted</a>. Any of your help is appreciated!</li>
+                          <li style="list-style-type: none;"><span style="background-color: #4F709C; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #F6F1F1">Jun 5, 2023:</strong></span> We open-sourced our <a href="https://arxiv.org/abs/2301.07507">Graphix-T5</a>, a graph-aware semi-pretrained text-to-text PLM specifically designed to improve multi-hop reasoning for the complex text-to-SQL task.  
+                          <li style="list-style-type: none;"><span style="background-color: #4F709C; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #F6F1F1">May 30, 2023:</strong></span> If you are interested in ICL, please check out our interesting work <a href="https://arxiv.org/pdf/2305.13016.pdf">deep-thinking🤔.</a> Generate 1000 models for 1000 people smoothly!  
+                          </li>  
+                      </ul>  
+                  </div>  
+              </div>  
+            </div>
+          </div>
+          <div class="list-group-item" id="illustration">
+            <h4>Surprise from BIRD</h4>
+            <p>
+              <b>1. Large and Dirty values:</b> Due to the nature of the real-world scenarios from which BIRD's database
+              values were collected, they typically retain their original and frequently "dirty" format. Hence,
+              text-to-SQL parsers must first analyze these values to account for their non-standard format before
+              engaging in reasoning.
+            </p>
+            <img src="./img/dirty_1.png" class="column-img" id="dirty-img-1" style="margin:0 auto;" />
+            <img src="./img/dirty_2.png" class="column-img" id="dirty-img-2" style="margin:0 auto;" />
+            <p>
+              <b>2. External Knowledge:</b> "account.type = 'OWNER'" can be inferred by the knowledge evidence: "The
+              condition of the loans require the account type should be the owner."
+            </p>
+            <img src="./img/ex_kg_2.png" class="column-img" id="kg-img" style="margin:0 auto;" />
+            <p>
+              <b>3. Text-to-Efficient-SQL:</b> BIRD is the first text-to-SQL benchmark designed to encourage semantic
+              parsers to produce SQL queries that are not only correct but also efficient. This emphasis on efficiency
+              is especially valuable in real-world data / business analysis circumstances.
+            </p>
+            <img src="./img/efficient_sql.png" class="column-img" id="eff-img" style="margin:0 auto;" />
+          </div>
+          <!-- <div class="list-group-item">
+            <h4>Download Dataset</h4>
+            <p>We are cleaning and checking our databases, SQLs, Question, and Knowledge carefully. Will come up soon!</p>
+            <p class="text-center">
+              <a href="https://bird-bench.github.io/"><button type="button" class="btn btn-success", id="code">BIRD Code Nest</button></a>
+            </p>
+          </div> -->
+          <div class="list-group-item">
+            <h4>Submission</h4>
+            <p>Please follow the Submission Guideline (below) and contact <code>bird.bench23@gmail.com</code> for test evaluation. Ususally, we will return your results in 10 days!
+             
+            </p>
+            <style>  
+              .btn-a {  
+                border-radius: 25px; /* Adjust this value to change the roundness of the button */  
+              }  
+              .btn-a:hover {  
+                background-color: #22A699; /* Change the background color when the cursor is over the button */  
+              }  
+            </style>  
+            <div class="button-row">
+              <a href="https://docs.google.com/document/d/1Rs6d_pcs2vfqW4Ymub7Wb1XtBNlrc-WfH3T7U1ktuBo/edit?usp=sharing" target="_blank">
+                <button type="button" class="btn  btn-a">Submission Guidelines</button>
+              </a>
+            </div>
+          </div>
+          
+          <div class="list-group-item">
+            <h4>Subscribe to BIRD Update</h4>  
+            <p>Bird is a long-term research project aimed at bridging the gap between semantic parsing models and the success of database applications. To receive the latest updates of the dataset, you can leave your email address.
+            </p>
+            <form onsubmit="return submitForm();">  
+                <input type="email" id="email" name="email" placeholder="Email address" required>  
+                <button type="submit">Subscribe</button>  
+            </form>  
+            <p id="message"></p>  
+          </div> 
+          
+          <head>  
+              <meta charset="utf-8">  
+              <title>Email Subscription</title>  
+              <script>  
+                function submitForm() {  
+                  var email = document.getElementById("email").value;  
+                  var url = "https://script.google.com/macros/s/AKfycbynv6Ibnl9gJosprkRmXhbKtllZX8dqrbj_xQkcbZ_NgEDBxwyjz1xyvIvnm_4yPh3ZPA/exec";  
+                  var data = "email=" + encodeURIComponent(email);  
+                    
+                  fetch(url, {  
+                    method: "POST",  
+                    body: data,  
+                    headers: {  
+                      "Content-Type": "application/x-www-form-urlencoded"  
+                    }  
+                  })  
+                  .then(response => response.text())  
+                  .then(text => {  
+                    document.getElementById("message").innerHTML = "<i>Subscribe Successfully! Thanks for your attention!</i>";  
+                  })  
+                  .catch(error => {  
+                    console.error("Error:", error);  
+                  });  
+                    
+                  return false;  
+                }  
+              </script>  
+          </head>   
+          <div class="list-group-item">
+            <h4>Citation</h4>
+            <!-- <pre id="citation">
+@misc{li2023llm,
+  title={Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs},
+  author={Jinyang Li and Binyuan Hui and Ge Qu and Binhua Li and Jiaxi Yang and Bowen Li and Bailin Wang and Bowen Qin and Rongyu Cao and Ruiying Geng and Nan Huo and Chenhao Ma and Kevin C. C. Chang and Fei Huang and Reynold Cheng and Yongbin Li},
+  year={2023},
+  eprint={2305.03111},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL}
+}</pre> -->
+            <pre id="citation">
+@article{li2024can,
+  title={Can llm already serve as a database interface? a big bench for large-scale database grounded text-to-sqls},
+  author={Li, Jinyang and Hui, Binyuan and Qu, Ge and Yang, Jiaxi and Li, Binhua and Li, Bowen and Wang, Bailin and Qin, Bowen and Geng, Ruiying and Huo, Nan and others},
+  journal={Advances in Neural Information Processing Systems},
+  volume={36},
+  year={2024}
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        
+        <div class="card card-outline-secondary">
+          <div class="card-header">
+            Leaderboard - Execution Accuracy (EX)
+          </div>
+          <div class="table-wrapper">
+            <table class="table" id="ex-table">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" rowspan="1"></th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Model</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Code</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Size</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Oracle Knowledge</th>
+                  <th scope="col" colspan="1" class="text-center">Dev (%)</th>
+                  <th scope="col" colspan="1" class="text-center">Test (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-success">
+                  <td scope="row" class="align-middle text-center"><br>
+                  </td>
+                  <td class="align-middle text-center">Human Performance<br>
+                    <span class="affiliation">Data Engineers + DB Students</span><br><a href="" class="paperlink"></a>
+                  </td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">✔️</td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"><b>92.96</b></td>
+                </tr>
+
+                <!-- <tr class="table-success">
+                  <td scope="row" class="align-middle text-center"><br>
+                  </td>
+                  <td class="align-middle text-center">Human Performance<br>
+                    <span class="affiliation">Data Engineers + DB Students</span><br><a href="" class="paperlink"></a>
+                  </td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">✔️</td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"><b>72.37</b></td>
+                </tr> -->
+
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Mar 17, 2023</span>
+                  </td>
+                  <td class="align-middle text-center">ChatGPT + CoT<br>
+                    <span class="affiliation">HKU & DAMO</span><br><a href="https://arxiv.org/abs/2305.03111"
+                      class="paperlink">[Li et al. NeurIPS'23]</a>
+                  </td>
+                  <td class="align-middle text-center">
+                    <a href="https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/bird">[link]</a>
+                  </td>
+                  <td class="align-middle text-center">UNK</td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">25.88</td>
+                  <td class="align-middle text-center">28.95</td>
+                </tr>
+
+                <!-- Copy from here -->
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Mar 17, 2023</span>
+                  </td>
+                  <td class="align-middle text-center">ChatGPT<br>
+                    <span class="affiliation">Baseline</span><br><a href="" class="paperlink"></a>
+                  </td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">UNK</td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">24.05</td>
+                  <td class="align-middle text-center">26.77</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Feb 5, 2023</span>
+                  </td>
+                  <td class="align-middle text-center">T5-3B<br>
+                    <span class="affiliation">Baseline</span><br><a href="" class="paperlink"></a>
+                  </td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">3B</td>
+                  <td class="align-middle text-center">✔️</td>
+                  <td class="align-middle text-center">23.34</td>
+                  <td class="align-middle text-center">24.05</td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Feb 3, 2023</span>
+                  </td>
+                  <td class="align-middle text-center">T5-Base<br>
+                    <span class="affiliation">Baseline</span><br><a href="" class="paperlink"></a>
+                  </td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">220M</td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">6.32</td>
+                  <td class="align-middle text-center">7.06</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+        <div class="card card-outline-secondary">
+          <div class="card-header">
+            Leaderboard - Valid Efficiency Score (VES)
+          </div>
+          <div class="table-wrapper">
+            <table class="table" id="ves-table">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" rowspan="1"></th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Model</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Code</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Size</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Oracle Knowledge</th>
+                  <th scope="col" colspan="1" class="text-center">Dev</th>
+                  <th scope="col" colspan="1" class="text-center">Test</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-success">
+                  <td scope="row" class="align-middle text-center"><br>
+                  </td>
+                  <td class="align-middle text-center">Human Performance<br>
+                    <span class="affiliation">Data Engineers + DB Students</span><br><a href="" class="paperlink"></a>
+                  </td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">✔️</td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"><b>90.27</b></td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">May 14, 2024</span>
+                  </td>
+                  <td class="align-middle text-center">ExSL + granite-20b-code<br>
+                    <span class="affiliation">IBM Research AI</span><br><a href="" class="paperlink"></a>
+                  </td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">20B</td>
+                  <td class="align-middle text-center">✔️</td>
+                  <td class="align-middle text-center">75.75</td>
+                  <td class="align-middle text-center"><b>80.40</b></td>
+                </tr>
+
+
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Feb 3, 2023</span>
+                  </td>
+                  <td class="align-middle text-center">T5-Base<br>
+                    <span class="affiliation">Baseline</span><br><a href="" class="paperlink"></a>
+                  </td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">220M</td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">7.78</td>
+                  <td class="align-middle text-center">8.97</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <hr>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="./js/clean-blog.min.js"></script>
+  </div>
+</body>
+
+</html>
