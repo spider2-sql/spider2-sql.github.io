@@ -1,10 +1,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-    content="BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval">
-  <meta name="keywords" content="Reasoning-Intensive Retrieval Benchmark">
+    content="Spider2: A Realistic and Challenging Benchmark for SQL Generation">
+  <!-- <meta name="keywords" content="Reasoning-Intensive Retrieval Benchmark"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval</title>
+  <title>Spider2: A Realistic and Challenging Benchmark for SQL Generation</title>
   <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 
 
@@ -98,6 +98,9 @@
             <a class="navbar-item" href="https://arks-codegen.github.io/">
               ARKS
             </a>
+            <a class="navbar-item" href="https://brightbenchmark.github.io/">
+              BRIGHT
+            </a>
             <a class="navbar-item" href="https://os-world.github.io/">
               OSWorld
             </a>
@@ -116,7 +119,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <h1 class="title is-1 publication-title">
-              BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval<br>
+              Spider2: A Realistic and Challenging Benchmark for SQL Generation<br>
           </h1>
 
         </div>
@@ -124,28 +127,25 @@
     </div>
 <!--  </section>-->
 
-<div class="columns is-centered">
+<!-- <div class="columns is-centered">
         <div class="is-size-5 publication-authors">
           <span class="author-block">
-            <a href="https://hongjin-su.github.io/">Hongjin Su*</a><sup>1</sup>,</span>
+            <a href="https://hongjin-su.github.io/">Hongjin Su</a><sup>1</sup>,</span>
+        </div>
+        </div> -->
+
+<div class="columns is-centered">
+        <div class="is-size-5 publication-authors">
+          <!-- <span class="author-block">
+            <a href="https://openreview.net/profile?id=~Han-yu_Wang1">Han-yu Wang</a><sup>1</sup>,</span> -->
+          <!-- <span class="author-block">
+            <a href="https://taoyds.github.io/">Tao Yu</a><sup>1</sup></span> -->
         </div>
         </div>
 
 <div class="columns is-centered">
         <div class="is-size-5 publication-authors">
-          <span class="author-block">
-            <a href="https://openreview.net/profile?id=~Han-yu_Wang1">Han-yu Wang</a><sup>1</sup>,</span>
-          <span class="author-block">
-            <a href="https://taoyds.github.io/">Tao Yu</a><sup>1</sup></span>
-        </div>
-        </div>
-
-<div class="columns is-centered">
-        <div class="is-size-5 publication-authors">
-          <span class="author-block"><sup>1</sup>The University of Hong Kong,</span>
-          <span class="author-block"><sup>2</sup>Princeton University,</span>
-          <span class="author-block"><sup>3</sup>University of Washington,</span>
-          <span class="author-block"><sup>4</sup>Google Cloud AI Research</span>
+          <span class="author-block">The University of Hong Kong,</span>
         </div>
     </div>
 
@@ -267,24 +267,63 @@
               <div class="infoCard">
                  <div class="infoBody">
                     <div class="infoHeadline">
-                       <h2>Why a new benchmark?</h2>
+                       <h2>Why Spider2?</h2>
                     </div>
                     <p align="left">
-                    <div class="left"> Existing retrieval benchmarks primarily consist of information-seeking queries (e.g., aggregated questions from search engines) where keyword or semantic-based retrieval is usually sufficient. However, many real-world, complex queries necessitate in-depth reasoning to identify relevant documents that go beyond surface form matching. For example, finding documentation for a coding question requires understanding the logic and syntax of the functions involved. We introduce BRIGHT to better benchmark retrieval on such challenging and realistic scenarios.
+                    <div class="left"> We introduced Spider2 to address the challenges faced by SQL generation in real industrial development. We collected enterprise-grade databases across various fields, with schemas that are both complex and extensive. We gathered high-quality SQL queries from open-source websites and professional forums, which were then manually rewritten and annotated.
                     </div>
                     <div class="infoHeadline">
-                       <h2>BRIGHT</h2>
+                      <h2>Settings</h2>
+                    </div>
+                    
+                    <p align="left"> 
+                      To meet the diverse research needs, we set up Spider2 with two settings. Most SQLs in these two settings overlap.
+                    </p>
+                    
+                    <p align="left">
+                      <strong>Spider2: Traditional Text2SQL Setting.</strong> Focusing on Text2SQL, with detailed database metadata.
+                    </p>
+                    
+                    <p align="left">
+                      <strong>Spider2-World: Code agent setting.</strong> SQL generation in a real-world setting requires automatically exploring complex databases, using Python, SQL, and command-line tools. Project-level Text-to-SQL task is also involved in this setting.
+                    </p>
+                    
+
+                    <div class="infoHeadline">
+                       <h2>Spider2</h2>
                     </div>
                     <p align="left">
                     <div class="left">
-                     <span style="white-space: pre-line">We introduce BRIGHT, the first text retrieval benchmark that requires intensive reasoning to retrieve relevant documents. We collect 1,385 real-world queries from diverse domains (StackExchange, LeetCode, and math competitions), sourced from naturally occurring or carefully curated human data. We pair these queries with web pages linked in StackExchange answers, tagged theorems in math Olympiad questions—all of which require deliberate reasoning to identify the connections.</span><br>
+                     <span style="white-space: pre-line">Spider2 is a realistic and challenging Text-to-SQL dataset, significantly more difficult and closer to real-world scenarios than any previous Text2SQL benchmarks.</span><br>
 <!--                       <a class="btn actionBtn" href="https://brightbenchmark.github.io/">Paper</a>-->
 <!--                       <a class="btn actionBtn" href="https://github.com/xlang-ai/bright">Code</a>-->
 <!--                       <a class="btn actionBtn" href="https://huggingface.co/datasets/xlangai/BRIGHT">Data</a>-->
 <!--                       <a class="btn actionBtn" href="https://huggingface.co/datasets/xlangai/BRIGHT">Twitter</a>-->
                     </div>
-                     <img src="images/figure1.png" alt="test image" width="600">
+                     <img src="images/Spider2_examples.png" alt="test image" width="500">
                     </p>
+
+                    <div class="infoHeadline">
+                      <h2>Spider2-World</h2>
+                    </div>
+                    
+                    <p align="left">
+                      Spider2-World is a challenging code generation benchmark that requires writing SQL (primarily), Python, and Command Line commands to solve problems. 😊
+                    </p>
+                    
+                    <p align="left">
+                      <strong>Query-level Task:</strong> We transform almost all examples from Spider2 into Spider2-World. The most distinctive feature is that it doesn't provide predefined schema information; the methods need to explore the database automatically and interactively write SQL. (Somewhat similar to the setting in Intercode)
+                    </p>
+                    
+                    <p align="left">
+                      <strong>Project-level Task:</strong> We also propose a new novel SQL generation task based on the DBT project, which is a highly realistic SQL generation scenario commonly used in industry development, requiring the completion of a complex data transformation task. (Somewhat similar to the setting in SWE-Bench.)
+                    </p>
+                    
+                    <p align="left">
+                      <img src="images/Spider2-World.png" alt="test image" width="500">
+                    </p>
+                    
+
 <!--                     <div class="infoHeadline">-->
 <!--                       <h2>Data Examples</h2>-->
 <!--                    </div>-->
@@ -293,11 +332,12 @@
 <!--                    </div>-->
 <!--                    </p>-->
 <!--                    <img src="images/bright_examples.png" alt="test image" width="600">-->
+
                     <div class="infoHeadline">
                        <h2>Have Questions?</h2>
                     </div>
                     <p align="left">
-                    <div class="left">Ask us questions at our <a href="https://github.com/xlang-ai/BRIGHT/issues">Github issues page</a> or contact <a href="https://hongjin-su.github.io/">Hongjin Su</a>, <a href="https://howard-yen.github.io/">Howard Yen</a>, or <a href="https://xiamengzhou.github.io/">Mengzhou Xia</a>.
+                    <div class="left">Ask us questions at our <a href="https://github.com/xlang-ai/Spider2/issues">Github issues page</a> or contact <a href="https://lfy79001.github.io/">Fangyu Lei</a> for more information.
                     </div>
                  </div>
               </div>
@@ -312,10 +352,10 @@
                         </div>
                         <div class="tabs is-centered example_lst">
                           <ul>
-                            <li class="is-active"><a title="Short document">Short document</a></li>
+                            <li class="is-active"><a title="Spider2">Spider2</a></li>
 <!--                            <li><a title="LLM reasoning">LLM reasoning</a></li>-->
 <!--                            <li><a title="Reranking">Reranking</a></li>-->
-                            <li><a title="Long document">Long document</a></li>
+                            <li><a title="Spider2-World">Spider2-World</a></li>
                           </ul>
                         </div>
                         <script type="text/javascript">
@@ -339,19 +379,19 @@
 
                         </script>
 
-                        <div title="Short document" class="lib_examples" id="BoardPanel1" style="display: block;">
+                        <div title="Spider2" class="lib_examples" id="BoardPanel1" style="display: block;">
                            <md-block>
-                            We report the average nDCG@10 score across 12 datasets in BRIGHT. Apart from using the original query, retrievers can replace it with the LLM reasoning steps to retrieve relevant documents.
+                            We report the score from the evaluation suite, where the use of the plan and gold SQL is not allowed. Only the database metadata and external information can be used.
                           </md-block>
                           <table class="table performanceTable">
                             <tr>
                               <th>Rank</th>
-                              <th>Retriever</th>
+                              <th>Method</th>
 <!--                              <th>Details</th>-->
                               <th>Score</th>
                             </tr>
 
-                    <tr>
+                <!-- <tr>
                    <td>
                       <p>1</p>
                       <span class="date label label-default">July 11, 2024</span>
@@ -361,16 +401,27 @@
                             <p style="font-size: 15;"> <i> Microsoft </i> </p>
                           </td>
                    <td><b>26.5</b></td>
-                </tr>
+                </tr> -->
 
+                <tr>
+                  <td>
+                     <p>1</p>
+                     <span class="date label label-default">Aug 24, 2024</span>
+                  </td>
+                         <td style="word-break:break-word;">
+                           DailSQL + GPT-4o
+                           <p style="font-size: 15;"> <i> Baseline </i> </p>
+                         </td>
+                  <td><b>4.3</b></td>
+               </tr>
 
 
                           </table>
                         </div>
 
-                        <div title="Long document" class="lib_examples" id="BoardPanel4" style="display: none;">
+                        <div title="Spider2-World" class="lib_examples" id="BoardPanel4" style="display: none;">
                           <md-block>
-                            We report the average Recall@1 score across 8 datasets where short documents are aggregated into long ones (up to 40k on average).
+                            We report the score from the evaluation suite. In this setting, the agent method can only use the contents of the folder to solve the problem.
                           </md-block>
 
                           <!-- <div class="content has-text-justified"> -->
@@ -390,14 +441,26 @@
                     <tr>
                        <td>
                           <p>1</p>
-                          <span class="date label label-default">July 11, 2024</span>
+                          <span class="date label label-default">Aug 24, 2024</span>
                        </td>
                               <td style="word-break:break-word;">
-                                <a class="link" href="https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct">gte-Qwen1.5-7B-instruct</a>
-                                <p style="font-size: 15;"> <i> Alibaba </i> </p>
+                                Spider-Agent + GPT-4o
+                                <p style="font-size: 15;"> <i> Baseline </i> </p>
                               </td>
-                       <td><b>27.8</b></td>
+                       <td><b>9.8</b></td>
                     </tr>
+
+                    <tr>
+                      <td>
+                         <p>2</p>
+                         <span class="date label label-default">Aug 24, 2024</span>
+                      </td>
+                             <td style="word-break:break-word;">
+                               CodeAct + GPT-4o
+                               <p style="font-size: 15;"> <i> Baseline </i> </p>
+                             </td>
+                      <td><b>4.8</b></td>
+                   </tr>
 
                           </table>
                         </div>
