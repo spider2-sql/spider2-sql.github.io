@@ -145,7 +145,7 @@
 
 <div class="columns is-centered">
         <div class="is-size-5 publication-authors">
-          <span class="author-block">The University of Hong Kong,</span>
+          <span class="author-block">The University of Hong Kong</span>
         </div>
     </div>
 
@@ -180,7 +180,7 @@
                 <!--                </span>-->
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/xlang-ai/BRIGHT"
+                  <a href="https://github.com/xlang-ai/Spider2"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -200,7 +200,7 @@
 <!--                </span>-->
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href="https://huggingface.co/datasets/xlangai/BRIGHT"
+                  <a href="https://huggingface.co/datasets/xlangai/Spider2"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-images"></i>
@@ -237,7 +237,8 @@
                     <span>Twitter</span>
                   </a>
                 </span>
-                  <span class="link-block">
+
+                <!-- <span class="link-block">
                 <a href="https://huggingface.co/spaces/mteb/leaderboard?task=retrieval&language=bright"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -245,7 +246,7 @@
                   </span>
                   <span>MTEB</span>
                   </a>
-              </span>
+              </span> -->
                 <!-- Discord Link. -->
 <!--                <span class="link-block">-->
 <!--                  <a href="https://discord.gg/4Gnw7eTEZR" target="_blank"-->
@@ -266,12 +267,44 @@
            <div class="col-md-6">
               <div class="infoCard">
                  <div class="infoBody">
-                    <div class="infoHeadline">
+                    
+                  
+                  <div class="infoHeadline">
+                    <h2>News</h2>
+                 </div>
+
+                  
+                 <style>
+                  .scroll-container {
+                      max-height: 400px; /* 设置容器的最大高度 */
+                      overflow-y: auto; /* 添加垂直滚动条 */
+                  }
+                  </style>
+                  
+                  <div class="scroll-container">  
+                      <div class="card card-outline-secondary mb-4" style="text-align: left;">                      
+                          <div class="card-body" style="background-color: #F1F6F9;">  
+                            <ul style="padding-left: 0;">
+                                 <li style="list-style-type: none;"><span style="background-color: #22A699; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #FFE7CE">Aug. 25, 2024:</strong></span>We released a subset of Spider2 to allow users early access. The full dataset and the paper will be released in two weeks. Stay tuned! 🤗</li>
+                               </li>  
+                            </ul>  
+                        </div>  
+                    </div>  
+                  </div>
+
+
+
+                  <div class="infoHeadline">
                        <h2>Why Spider2?</h2>
                     </div>
+
+
                     <p align="left">
                     <div class="left"> We introduced Spider2 to address the challenges faced by SQL generation in real industrial development. We collected enterprise-grade databases across various fields, with schemas that are both complex and extensive. We gathered high-quality SQL queries from open-source websites and professional forums, which were then manually rewritten and annotated.
                     </div>
+
+
+
                     <div class="infoHeadline">
                       <h2>Settings</h2>
                     </div>
@@ -287,6 +320,7 @@
                     <p align="left">
                       <strong>Spider2-World: Code agent setting.</strong> SQL generation in a real-world setting requires automatically exploring complex databases, using Python, SQL, and command-line tools. Project-level Text-to-SQL task is also involved in this setting.
                     </p>
+                    <img src="images/Spider2.png" alt="test image" width="550">
                     
 
                     <div class="infoHeadline">
@@ -300,7 +334,6 @@
 <!--                       <a class="btn actionBtn" href="https://huggingface.co/datasets/xlangai/BRIGHT">Data</a>-->
 <!--                       <a class="btn actionBtn" href="https://huggingface.co/datasets/xlangai/BRIGHT">Twitter</a>-->
                     </div>
-                     <img src="images/Spider2_examples.png" alt="test image" width="500">
                     </p>
 
                     <div class="infoHeadline">
@@ -317,10 +350,6 @@
                     
                     <p align="left">
                       <strong>Project-level Task:</strong> We also propose a new novel SQL generation task based on the DBT project, which is a highly realistic SQL generation scenario commonly used in industry development, requiring the completion of a complex data transformation task. (Somewhat similar to the setting in SWE-Bench.)
-                    </p>
-                    
-                    <p align="left">
-                      <img src="images/Spider2-World.png" alt="test image" width="500">
                     </p>
                     
 
@@ -381,7 +410,10 @@
 
                         <div title="Spider2" class="lib_examples" id="BoardPanel1" style="display: block;">
                            <md-block>
-                            We report the score from the evaluation suite, where the use of the plan and gold SQL is not allowed. Only the database metadata and external information can be used.
+                            We report the score from <a href="https://github.com/xlang-ai/Spider2/tree/main/Spider2/evaluation_suite">Spider2 evaluation suite</a>. <br>
+                            In this setting, <a href="https://github.com/xlang-ai/Spider2/tree/main/Spider2/databases/bigquery/metadata">database metadata</a> and <a href="https://github.com/xlang-ai/Spider2/tree/main/Spider2/external_information">external information</a> can be used.<br>
+                            <span style="color: red;">Note</span> that the method using the `plan` and `gold SQL` fields will not appear on this leaderboard. <br>
+                            It only shows the Tiny Version with 133 examples (20% of the full dataset).
                           </md-block>
                           <table class="table performanceTable">
                             <tr>
@@ -421,7 +453,9 @@
 
                         <div title="Spider2-World" class="lib_examples" id="BoardPanel4" style="display: none;">
                           <md-block>
-                            We report the score from the evaluation suite. In this setting, the agent method can only use the contents of the folder to solve the problem.
+                            We report the score from <a href="https://github.com/xlang-ai/Spider2/tree/main/Spider2-World/evaluation_suite">Spider-World evaluation suite</a>.<br>
+                            In this setting, the agent method can only use the contents of each folder to solve the problem. <br>
+                            It only shows the Tiny Version with 40 examples (10% of the full dataset).
                           </md-block>
 
                           <!-- <div class="content has-text-justified"> -->
