@@ -372,11 +372,11 @@
                     </p>
                     
                     <p align="left">
-                      <strong>Query-level Task:</strong> we provide the Spider2-World setting for almost all examples of Spider2, which differs from traditional text-to-SQL. The most distinctive feature is that it doesn't provide predefined schema information; the methods need to explore the database automatically and interactively write SQL. (Somewhat similar to the setting in Intercode)
+                      <strong>Query-level Task:</strong> we provide the Spider2-World setting for almost all examples of Spider2, which differs from traditional text-to-SQL. The most distinctive feature is that it doesn't provide predefined schema information; the methods need to explore the database automatically and interactively write SQL. (Somewhat similar to the setting in <a href="https://github.com/princeton-nlp/intercode">Intercode</a>)
                     </p>
                     
                     <p align="left">
-                      <strong>Project-level Task:</strong> We also propose a new novel SQL generation task based on the DBT project, which is a highly realistic SQL generation scenario commonly used in industry development, requiring the completion of a complex data transformation task. (Somewhat similar to the setting in SWE-Bench.)
+                      <strong>Project-level Task:</strong> We also propose a new novel SQL generation task based on the DBT project, which is a highly realistic SQL generation scenario commonly used in industry development, requiring the completion of a complex data transformation task. (Somewhat similar to the setting in <a href="https://www.swebench.com/">SWE-Bench</a>.)
                     </p>
                     
 
@@ -440,7 +440,7 @@
                             We report the score from <a href="https://github.com/xlang-ai/Spider2/tree/main/Spider2/evaluation_suite">Spider2 evaluation suite</a>. <br>
                             In this setting, <a href="https://github.com/xlang-ai/Spider2/tree/main/Spider2/databases/bigquery/metadata">database metadata</a> and <a href="https://github.com/xlang-ai/Spider2/tree/main/Spider2/external_information">external information</a> can be used.<br>
                             <span style="color: red;">Note</span> that the method using the `plan` and `gold SQL` fields will not appear on this leaderboard. <br>
-                            It only shows the Tiny Version with 133 examples (20% of the full dataset).
+                            It only shows the Tiny Version with 149 examples (20% of the full dataset).
                           </md-block>
                           <table class="table performanceTable">
                             <tr>
@@ -468,10 +468,10 @@
                      <span class="date label label-default">Aug 24, 2024</span>
                   </td>
                          <td style="word-break:break-word;">
-                           DailSQL + GPT-4o (with plan)
+                           DailSQL + GPT-4o
                            <p style="font-size: 15;"> <i> Baseline </i> </p>
                          </td>
-                  <td><b>8.84</b></td>
+                  <td><b>6.04</b></td>
                </tr>
 
                <tr>
@@ -480,10 +480,10 @@
                    <span class="date label label-default">Aug 24, 2024</span>
                 </td>
                        <td style="word-break:break-word;">
-                         DailSQL + GPT-4o
+                         CodeS-7B
                          <p style="font-size: 15;"> <i> Baseline </i> </p>
                        </td>
-                <td><b>3.54</b></td>
+                <td><b>1.34</b></td>
              </tr>
 
 
@@ -494,7 +494,7 @@
                           <md-block>
                             We report the score from <a href="https://github.com/xlang-ai/Spider2/tree/main/Spider2-World/evaluation_suite">Spider-World evaluation suite</a>.<br>
                             In this setting, the agent method can only use the contents of each folder to solve the problem. <br>
-                            It only shows the Tiny Version with 40 examples (10% of the full dataset).
+                            It only shows the Tiny Version with 100 examples (15% of the full dataset).
                           </md-block>
 
                           <!-- <div class="content has-text-justified"> -->
@@ -520,32 +520,9 @@
                                 Spider-Agent + GPT-4o
                                 <p style="font-size: 15;"> <i> Baseline </i> </p>
                               </td>
-                       <td><b>6.0</b></td>
+                       <td><b>9.25</b></td>
                     </tr>
 
-                    <tr>
-                      <td>
-                         <p>2</p>
-                         <span class="date label label-default">Aug 24, 2024</span>
-                      </td>
-                             <td style="word-break:break-word;">
-                               Spider-Agent + Gemini
-                               <p style="font-size: 15;"> <i> Baseline </i> </p>
-                             </td>
-                      <td><b>4.0</b></td>
-                   </tr>
-
-                    <tr>
-                      <td>
-                         <p>3</p>
-                         <span class="date label label-default">Aug 24, 2024</span>
-                      </td>
-                             <td style="word-break:break-word;">
-                               CodeAct + GPT-4o
-                               <p style="font-size: 15;"> <i> Baseline </i> </p>
-                             </td>
-                      <td><b>2.0</b></td>
-                   </tr>
 
                           </table>
                         </div>
