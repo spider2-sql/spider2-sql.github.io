@@ -270,16 +270,16 @@
                       <div class="column is-three-quarters">
                           <h2 class="title is-3">Abstract</h2>
                           <p class="content">
-                            SQL is widely used to build modern data stacks and interact with databases (DBs) for complex data engineering tasks. 
-                            To facilitate human-data interaction, text-to-SQL has become a widely researched task aimed at converting human natural language intentions into executable SQL on DBs. 
-                            In real industrial development, SQL generation encounters challenges due to complex database schemas and intricate SQL logic, addressing a wide range of real-world scenarios. 
-                            We introduce Spider2, a realistic and challenging benchmark for SQL generation. This benchmark includes 600 examples across diverse SQL generation scenarios. 
-                            We collected enterprise-grade databases across various fields, with schemas that are both complex and extensive. 
-                            We gathered high-quality and complex SQL queries from open-source websites and professional forums, which were then manually rewritten and annotated.
-                            We also proposed the project-level SQL generation tasks based on real data transformation projects.
-                            To accommodate the development of the Code Agent, we provide the Spider2-World setting for almost all examples of Spider2, which differs from traditional text-to-SQL. 
-                            In this setting, the method must autonomously explore the database and interface, interact using code, and obtain the final answer.
-                            Spider 2.0 bridges the gap for traditional text-to-SQL and provides valuable data resources for code generation in the LLM era and for the development of general code agents.
+                            Language models have demonstrated remarkable performance in code generation, including text-to-SQL tasks. 
+                            However, real-world enterprise-level text-to-SQL workflows often involve complex cloud or local data across various database systems, multiple SQL queries in various dialects, and diverse operations from data transformation to analytics. 
+                            These workflows typically process natural language analytic questions, yet we lack a comprehensive and challenging testbed that encapsulates these phenomena, essential for advancing the capabilities of these models and evaluating their true potential in code generation, specifically in text-to-SQL tasks.
+                            To this end, we introduce Spider 2.0, an evaluation framework comprising 600 real-world text-to-SQL workflow problems derived from enterprise-level database use cases. 
+                            The databases in Spider 2.0 are sourced from real data applications, often containing over 1,000 columns and stored in cloud or local database systems such as BigQuery, Snowflake, or PostgreSQL.
+                            Solving problems in Spider 2.0 frequently requires understanding and searching through database metadata, dialect documentation, and even project-level codebases. 
+                            This challenge calls for models to interact with complex SQL workflow environments, process extremely long contexts, perform intricate reasoning, and generate multiple SQL queries with diverse operations, often exceeding 100 lines, that go far beyond traditional text-to-SQL challenges.
+                            Our evaluations indicate that current state-of-the-art LLMs, such as GPT-4, and our proposed LLM-based Spider-Agent can solves a mere 6.0\% of the questions, compared to 86.6\% on Spider 1.0 and 57.4\% on BIRD. 
+                            These results underscore the significant challenges posed by Spider 2.0.
+                            Progress on Spider 2.0 represent crucial steps towards developing LLM-based code agents that are more intelligent, and autonomous in real-world enterprise settings.
                           </p>
                       </div>
                   </div>
