@@ -264,6 +264,17 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Main Figure. -->
+    <h2 class="title is-3"></h2>
+    <div class="content has-text-justified">
+      <img src="images/Spider2.png" width="100%" alt="osworld task_demonstration" class="responsive-image">
+    </div>
+    <!--/ Main Figure. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Abstract</h2>
@@ -327,8 +338,8 @@
                   <ul style="padding-left: 0;">
                     <li style="list-style-type: none;"><span
                         style="background-color: #22A699; color: white; padding: 2px 4px; border-radius: 5px;"><strong
-                          style="color: #FFE7CE">Aug. 28, 2024:</strong></span>We released a smaller version of Spider
-                      2.0 (approximately 25% of the full dataset) containing 190 examples to give users early access.
+                          style="color: #FFE7CE">Aug. 28, 2024:</strong></span> We released a smaller version of Spider
+                      2.0 (~ 25% of the full dataset) containing 190 examples to give users early access.
                       The full dataset and the paper will be available in two weeks. Stay tuned! </li>
                     </li>
                   </ul>
@@ -349,19 +360,20 @@
 
               However, real-world enterprise-level Text-to-SQL workflows often involve complex data and require advanced
               SQL queries across various operations. We lack a comprehensive testbed to fully evaluate and develop
-              Text-to-SQL capabilities.<br>
+              Text-to-SQL capabilities.<br><br>
 
-              To this end, we introduce Spider 2.0, an evaluation framework of real-world SQL generation tasks across
+              To this end, we introduce Spider 2.0, an evaluation framework of real-world SQL generation tasks
+              across
               enterprise-grade databases and diverse realistic scenarios.
             </div>
 
 
 
-            <div class="infoHeadline">
+            <!-- <div class="infoHeadline">
               <h2>Settings</h2>
-            </div>
+            </div> -->
 
-            <p align="left">
+            <!-- <p align="left">
               To meet the diverse research needs, we set up Spider 2.0 with two settings. Most SQLs in these two
               settings overlap.
             </p>
@@ -376,7 +388,7 @@
               <strong>Spider 2.0-Lite: Traditional Text2SQL Setting.</strong> Focusing on Text2SQL, with detailed
               database metadata.
             </p>
-            <img src="images/Spider2.png" alt="test image" width="550">
+            <img src="images/Spider2.png" alt="test image" width="550"> -->
 
 
             <div class="infoHeadline">
@@ -400,11 +412,12 @@
             </div>
 
             <p align="left">
-              Spider 2.0-Lite is a challenging code generation benchmark that requires writing SQL (primarily), Python,
-              and Command Line commands to solve problems. 😊
+              To meet with research interests in traditional Text2SQL settings, we have released a subset of Spider 2.0
+              called Spider 2.0-Lite. Spider 2.0-Lite covers 90% of examples from Spider 2.0 that are sampled to be more
+              lightweight and standalone, with a focus on evaluating Large Language Models on SQL generation.
             </p>
 
-            <p align="left">
+            <!-- <p align="left">
               <strong>Query-level Task:</strong> we provide the Spider 2.0-Lite setting for almost all examples of
               Spider2, which differs from traditional text-to-SQL. The most distinctive feature is that it doesn't
               provide predefined schema information; the methods need to explore the database automatically and
@@ -417,7 +430,7 @@
               project, which is a highly realistic SQL generation scenario commonly used in industry development,
               requiring the completion of a complex data transformation task. (Somewhat similar to the setting in <a
                 href="https://www.swebench.com/">SWE-Bench</a>.)
-            </p>
+            </p> -->
 
 
             <!--                     <div class="infoHeadline">-->
@@ -520,7 +533,7 @@
                   </table>
                 </div>
 
-                <div title="Spider2.0-Lite" class="lib_examples" id="BoardPanel4" style="display: none;">
+                <div title="Spider 2.0-Lite" class="lib_examples" id="BoardPanel4" style="display: none;">
                   <md-block>
                     We report the score from <a
                       href="https://github.com/xlang-ai/Spider2/tree/main/spider2-lite/evaluation_suite">Spider 2.0
