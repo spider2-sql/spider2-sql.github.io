@@ -357,26 +357,27 @@
 
 
             <p align="left">
-            <div class="left"> In 2018, our group proposed <a href="https://yale-lily.github.io/spider"><b>Spider
-                  1.0</b> </a>,
-              which has been widely used in Text-to-SQL research.
+            <div class="left">
+              In 2018, we introduced <a href="https://yale-lily.github.io/spider"><b>Spider
+                  1.0</b> </a>, <a href="https://yale-lily.github.io/sparc"><b>SParC</b></a>, and <a
+                href="https://yale-lily.github.io/cosql"><b>CoSQL</b></a> as part of the Yale Semantic Parsing and
+              Text-to-SQL
+              Challenge Series, attracting over 300 submissions from leading research labs worldwide.<br><br>
 
-              However, real-world enterprise-level Text-to-SQL workflows often involve complex database and require
-              advanced SQLs across diverse operations. <br><br>
+              Now, in the era of Large Language Models (LLMs), we present <b>Spider 2.0</b> to advance code generation,
+              particularly text-to-SQL capabilities.<br><br>
 
-              We lack a comprehensive and challenging testbed that encapsulates these phenomena, essential for advancing these models and fully evaluating their potential in code generation, specifically in text-to-SQL tasks. <br><br>
+              This new benchmark offers a more realistic and challenging test of LLMs' performance on complex
+              enterprise-level text-to-SQL workflows, involving complex data environments (e.g., >3000 columns),
+              multiple SQL dialects (e.g., BigQuery, Snowflake), and diverse operations (e.g., transformation,
+              analytics).<br><br>
 
-              To this end, we introduce <b>Spider 2.0</b>, an evaluation framework of real-world SQL generation
-              tasks
-              across
-              enterprise-grade databases and diverse realistic scenarios.
-              <br><br>
-
-                We compare the performance of popular methods on <a href="https://yale-lily.github.io/spider>">Spider
-                  1.0</a>, <a href="https://bird-bench.github.io/">BIRD</a>
-                and <b>Spider 2.0</b>.
-                The results show that <b>Spider 2.0</b> is significantly more challenging than previous Text-to-SQL
-                benchmarks.
+              Notably, as shown below, even the most advanced LLMs, including GPT-4, solve only 6.0% of <b>Spider
+                2.0</b>
+              tasks, compared to 86.6% on <a href="https://yale-lily.github.io/spider>">Spider
+                1.0</a> and 57.4% on <a href="https://bird-bench.github.io/">BIRD</a>, highlighting the significant
+              challenges posed by
+              <b>Spider 2.0</b>.<br><br>
 
               <table>
                 <thead>
@@ -491,7 +492,7 @@
             <p align="left">
             <div class="left">Ask us questions at our <a href="https://github.com/xlang-ai/Spider2/issues">Github issues
                 page</a> or contact <a href="https://lfy79001.github.io/">Fangyu Lei</a>, <a
-                href="https://chenjix.github.io/">Jixuan Chen</a> or <a href="https://rhythmcao.github.io/">Ruisheng
+                href="https://chenjix.github.io/">Jixuan Chen</a>, <a href="https://rhythmcao.github.io/">Ruisheng
                 Cao</a> or <a href="https://yuxiaooye.github.io/">Yuxiao Ye</a> for more information.
             </div>
           </div>
