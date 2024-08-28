@@ -287,19 +287,22 @@
             These workflows typically process natural language analytic questions, yet we lack a comprehensive and
             challenging testbed that encapsulates these phenomena, essential for advancing the capabilities of these
             models and evaluating their true potential in code generation, specifically in text-to-SQL tasks.
-            To this end, we introduce Spider 2.0, an evaluation framework comprising 600 real-world text-to-SQL workflow
+            To this end, we introduce **Spider 2.0**, an evaluation framework comprising 600 real-world text-to-SQL
+            workflow
             problems derived from enterprise-level database use cases.
-            The databases in Spider 2.0 are sourced from real data applications, often containing over 1,000 columns and
+            The databases in **Spider 2.0** are sourced from real data applications, often containing over 1,000 columns
+            and
             stored in cloud or local database systems such as BigQuery, Snowflake, or PostgreSQL.
-            Solving problems in Spider 2.0 frequently requires understanding and searching through database metadata,
+            Solving problems in **Spider 2.0** frequently requires understanding and searching through database
+            metadata,
             dialect documentation, and even project-level codebases.
             This challenge calls for models to interact with complex SQL workflow environments, process extremely long
             contexts, perform intricate reasoning, and generate multiple SQL queries with diverse operations, often
             exceeding 100 lines, that go far beyond traditional text-to-SQL challenges.
             Our evaluations indicate that current state-of-the-art LLMs, such as GPT-4, and our proposed LLM-based
             Spider-Agent can solves a mere 6.0% of the questions, compared to 86.6% on Spider 1.0 and 57.4% on BIRD.
-            These results underscore the significant challenges posed by Spider 2.0.
-            Progress on Spider 2.0 represent crucial steps towards developing LLM-based code agents that are more
+            These results underscore the significant challenges posed by **Spider 2.0**.
+            Progress on **Spider 2.0** represent crucial steps towards developing LLM-based code agents that are more
             intelligent, and autonomous in real-world enterprise settings.
           </md-block>
         </div>
@@ -348,29 +351,75 @@
             </div>
 
 
-
             <div class="infoHeadline">
               <h2>Why Spider 2.0?</h2>
             </div>
 
 
             <p align="left">
-            <div class="left"> In 2018, our group proposed <a href="https://yale-lily.github.io/spider">Spider 1.0</a>,
+            <div class="left"> In 2018, our group proposed <a href="https://yale-lily.github.io/spider"><b>Spider
+                  1.0</b> </a>,
               which has been widely used in Text-to-SQL research.
 
-              However, real-world enterprise-level Text-to-SQL workflows often involve complex data and require advanced
+              However, real-world enterprise-level Text-to-SQL workflows often involve complex data and require
+              advanced
               SQL queries across various operations. We lack a comprehensive testbed to fully evaluate and develop
               Text-to-SQL capabilities.<br><br>
 
-              To this end, we introduce Spider 2.0, an evaluation framework of real-world SQL generation tasks
+              To this end, we introduce <b>Spider 2.0</b>, an evaluation framework of real-world SQL generation
+              tasks
               across
               enterprise-grade databases and diverse realistic scenarios.
+            </div>
+            </p>
+
+            <div class="infoHeadline">
+              <h2>Performance Comparison</h2>
+            </div>
+
+            <div class="left">
+              <p align="left">
+                We compare the performance of popular methods on <a href="https://yale-lily.github.io/spider>">Spider
+                  1.0</a>, <a href="https://bird-bench.github.io/">BIRD</a>
+                and <b>Spider 2.0</b>.
+                The results show that <b>Spider 2.0</b> is significantly more challeng-ing than previous Text2SQL
+                benchmarks.
+              </p>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Spider 1.0 dev</th>
+                    <th>Spider 1.0 test</th>
+                    <th> BIRD test</th>
+                    <th>Spider 2.0</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="https://github.com/BeachWang/DAIL-SQL">DailSQL</a> + GPT-4 </td>
+                    <td>82.4</td>
+                    <td>86.6</td>
+                    <td>57.4</td>
+                    <td><b>6.0</b></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://github.com/RUCKBReasoning/codes">CodeS</a>-7B</td>
+                    <td>85.4</td>
+                    <td>-</td>
+                    <td>59.3</td>
+                    <td><b>1.3</b></td>
+                  </tr>
+
+                </tbody>
+              </table>
             </div>
 
 
 
-            <!-- <div class="infoHeadline">
-              <h2>Settings</h2>
+            <!-- <div class=" infoHeadline">
+                    <h2>Settings</h2>
             </div> -->
 
             <!-- <p align="left">
