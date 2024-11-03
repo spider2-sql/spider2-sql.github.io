@@ -522,6 +522,7 @@ Progress on Spider 2.0 represents crucial steps towards developing intelligent, 
                     <!--                            <li><a title="LLM reasoning">LLM reasoning</a></li>-->
                     <!--                            <li><a title="Reranking">Reranking</a></li>-->
                     <li><a title="Spider 2.0-Lite">Spider 2.0-Lite</a></li>
+                    <li><a title="Spider 2.0-Snow">Spider 2.0-Snow</a></li>
                   </ul>
                 </div>
                 <script type="text/javascript">
@@ -597,7 +598,7 @@ Progress on Spider 2.0 represents crucial steps towards developing intelligent, 
                   </table>
                 </div>
 
-                <div title="Spider 2.0-Lite" class="lib_examples" id="BoardPanel4" style="display: none;">
+                <div title="Spider 2.0-Lite" class="lib_examples" id="BoardPanel5" style="display: none;">
                   We report the score from <a
                     href="https://github.com/xlang-ai/Spider2/tree/main/spider2-lite/evaluation_suite">Spider 2.0-Lite
                     evaluation suite</a>. <br>
@@ -666,7 +667,77 @@ Progress on Spider 2.0 represents crucial steps towards developing intelligent, 
 
                   </table>
                 </div>
+
+
+                <div title="Spider 2.0-Snow" class="lib_examples" id="BoardPanel4" style="display: none;">
+                  We report the score from <a
+                    href="https://github.com/xlang-ai/Spider2/tree/main/spider2-lite/evaluation_suite">Spider 2.0-Snow
+                    evaluation suite</a>. <br>
+                    This set is self-contained, with well-prepared <a href="https://github.com/xlang-ai/Spider2/tree/main/spider2/resource/databases/bigquery">database metadata</a> and <a href="https://github.com/xlang-ai/Spider2/tree/main/spider2/resource/documentation">documentation</a>, making it a text-in, text-out task that supports faster development and evaluation.
+              <br>
+
+
+                  <table class="table performanceTable">
+                    <tr>
+                      <th>Rank</th>
+                      <th>Retriever</th>
+                      <!--                              <th>Details</th>-->
+                      <th>Score</th>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>1</p>
+                        <span class="date label label-default">Aug 24, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        DailSQL + GPT-4o
+                      </td>
+                      <td><b>9.29</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>2</p>
+                        <span class="date label label-default">Aug 24, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        CHESS + GPT-4o
+                      </td>
+                      <td><b>8.36</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>3</p>
+                        <span class="date label label-default">Aug 24, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        DIN-SQL + GPT-4o
+                      </td>
+                      <td><b>7.32</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>4</p>
+                        <span class="date label label-default">Aug 24, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        SFT CodeS-15B
+                      </td>
+                      <td><b>2.00</b></td>
+                    </tr>
+
+
+
+                  </table>
+                </div>
+
+
+
               </div>
+
             </div>
           </div>
         </div>
