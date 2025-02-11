@@ -387,6 +387,7 @@
           
           <div class="card card-outline-secondary">
             <div class="card-header">Leaderboard - Execution Accuracy (EX)</div>
+            <br>
             <div class="list-group-item" id="illustration">
               <h3>Spider 2.0-Snow </h3>
               <p>
@@ -415,6 +416,9 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <tr>
+
+                  </tr>
       
 
                 <tr>
@@ -568,17 +572,19 @@
               </table>
             </div>
           </div>
-          <!-- <div class="list-group-item" id="illustration">
-            <h3>BIRD Mini-Dev </h3>
+          <div class="list-group-item" id="illustration">
+            <h3>Spider 2.0-lite </h3>
             <p>
-              A <b>Lite</b> version of developtment dataset, which is designed 
-              to facilitate efficient and cost-effective development cycles,
-               especially for testing and refining SQL query generation models. For more details, please visit the <a href="https://github.com/bird-bench/mini_dev">GitHub repository</a>.
-               For updating Leaderboard, please make sure your paper or resource is public available and submit a PR.
-            </p>
+              <strong>Spider 2.0-lite</strong> is a self-contained text-to-SQL task that includes well-prepared <a
+                    href="https://github.com/xlang-ai/Spider2/tree/main/spider2-lite/resource/databases">database
+                    metadata</a> and <a
+                    href="https://github.com/xlang-ai/Spider2/tree/main/spider2-lite/resource/documents">documentation</a>.
+                  This setup enables a text-in, text-out approach, facilitating faster development and evaluation.
+                  Spider 2.0-lite, which has <strong>547</strong> examples, is designed to handle queries for
+                  <em><u>BigQuery</u></em>, <em><u>Snowflake</u></em>, and <em><u>SQLite</u></em> databases.
+                  </p>
           </div>
           <div class="card card-outline-secondary">
-            <div class="card-header">Mini Dev - Execution Accuracy (EX)</div>
             <div class="table-wrapper">
               <table class="table" id="ex-table">
                 <thead class="thead-light">
@@ -589,193 +595,254 @@
                       rowspan="1"
                       class="align-middle text-center"
                     >
-                      Model
+                      Method
                     </th>
-                    <th
-                      scope="col"
-                      rowspan="1"
-                      class="align-middle text-center"
-                    >
-                      Code
-                    </th>
-                    <th
-                      scope="col"
-                      rowspan="1"
-                      class="align-middle text-center"
-                    >
-                      Size
-                    </th>
-                    <th
-                      scope="col"
-                      rowspan="1"
-                      class="align-middle text-center"
-                    >
-                      Oracle Knowledge
-                    </th>
-                    <th scope="col" colspan="1" class="text-center">SQLite</th>
-                    <th scope="col" colspan="1" class="text-center">MySQL</th>
                     <th scope="col" colspan="1" class="text-center">
-                      PostgreSQL
+                      Score
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- <tr class="table-success">
-                    <td scope="row" class="align-middle text-center"><br>
-                    </td>
-                    <td class="align-middle text-center">Human Performance<br>
-                      <span class="affiliation">Data Engineers + DB Students</span><br><a href="" class="paperlink"></a>
-                    </td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">93.00</td>
-                    <td class="align-middle text-center">91.20</td>
-                    <td class="align-middle text-center">90.08</td>
-                  </tr> -->
-                  <!-- <tr >
+                  <tr>
 
                   </tr>
+      
+
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Jan 28, 2025</span>
+                  </td>
+                  <td class="align-middle text-center">ReFoRCE + o1-Preview<br>
+                    <span class="affiliation">Hao AI Lab x Snowflake</span><br><a href="https://arxiv.org/abs/2502.00675" class="paperlink">[Deng et al. '25]</a>
+                  </td>
+                  <td class="align-middle text-center"><b>24.50</b></td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Nov 2, 2024</span>
+                  </td>
+                  <td class="align-middle text-center">Spider-Agent + o1-preview<br>
+                  </td>
+                  <td class="align-middle text-center">20.66</td>
+                </tr>
+                
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Nov 2, 2024</span>
+                  </td>
+                  <td class="align-middle text-center">Spider-Agent + GPT-4o<br>
+                  </td>
+                  <td class="align-middle text-center">10.87</td>
+                </tr>
+                <tr>
+                    <td
+                      scope="row"
+                      class="align-middle text-center counter-cell"
+                    >
+                      <span class="badge badge-secondary">Dec 31, 2024</span>
+                    </td>
+                    <td class="align-middle text-center">
+                      Duo<br />
+                      <span class="affiliation">Anonymous</span>
+                    </td>
+                    <td class="align-middle text-center">8.96</td>
+                </tr>
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Nov 2, 2024</span>
+                  </td>
+                  <td class="align-middle text-center">Spider-Agent + Claude-3.5-Sonnet<br>
+                    
+                  </td>
+                  <td class="align-middle text-center">8.32</td>
+                </tr> 
+                  <tr>
+                    <td
+                      scope="row"
+                      class="align-middle text-center counter-cell"
+                    >
+                      <span class="badge badge-secondary">Nov 2, 2024</span>
+                    </td>
+                    <td class="align-middle text-center"> Spider-Agent + Qwen2.5-Coder-32B-Instruct<br>
+                    </td>
+                    <td class="align-middle text-center">5.85</td>
+                  </tr>
+
 
                   <tr>
-                    <td class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Jun 31, 2024</span>
+                    <td
+                      scope="row"
+                      class="align-middle text-center counter-cell"
+                    >
+                      <span class="badge badge-secondary">Nov 2, 2024</span>
                     </td>
                     <td class="align-middle text-center">
-                      TA + GPT-4<br />
-                      <span class="affiliation">HKU</span><br /><a
-                        href="https://arxiv.org/abs/2405.15307"
-                        class="paperlink"
-                        >[Qu et al. ACL Findings'24]</a
-                      >
+                      DailSQL + GPT-4o<br />
+                    </td>
+                    <td class="align-middle text-center">5.68</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Nov 2, 2024</span>
+                    </td>
+                    <td class="align-middle text-center">CHESS + GPT-4o<br>
+                    
+                    </td>
+                    <td class="align-middle text-center">3.84</td>
+                    </tr>
+  
+                  <tr>
+                      <td scope="row" class="align-middle text-center counter-cell">
+                          <span class="badge badge-secondary">Nov 2, 2024</span>
+                      </td>
+                      <td class="align-middle text-center">DIN-SQL + GPT-4o<br>
+                          
+                      </td>
+                      <td class="align-middle text-center">1.46</td>
+                  </tr>
+
+                  <tr>
+                    <td
+                      scope="row"
+                      class="align-middle text-center counter-cell"
+                    >
+                      <span class="badge badge-secondary">Nov 2, 2024</span>
                     </td>
                     <td class="align-middle text-center">
-                      <a href="https://github.com/quge2023/TA-SQL">[link]</a>
+                      SFT CodeS-15B<br />
                     </td>
-                    <td class="align-middle text-center">UNK</td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center"><b>58.00</b></td>
-                    <td class="align-middle text-center"><b>49.20</b></td>
-                    <td class="align-middle text-center"><b>50.80</b></td>
+                    <td class="align-middle text-center">0.73</td>
                   </tr>
-                  <tr>
-                    <td class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Jun 31, 2024</span>
-                    </td>
-                    <td class="align-middle text-center">GPT-4</td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center">UNK</td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">47.80</td>
-                    <td class="align-middle text-center">40.80</td>
-                    <td class="align-middle text-center">35.80</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Jun 31, 2024</span>
-                    </td>
-                    <td class="align-middle text-center">GPT-4-32k</td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center">UNK</td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">47.00</td>
-                    <td class="align-middle text-center">43.20</td>
-                    <td class="align-middle text-center">35.00</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Jun 31, 2024</span>
-                    </td>
-                    <td class="align-middle text-center">GPT-4-turbo</td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center">UNK</td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">45.80</td>
-                    <td class="align-middle text-center">41.00</td>
-                    <td class="align-middle text-center">36.00</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Jun 31, 2024</span>
-                    </td>
-                    <td class="align-middle text-center">
-                      Llama3-70b-instruct
-                    </td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center"><b>70B</b></td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">40.80</td>
-                    <td class="align-middle text-center">37.00</td>
-                    <td class="align-middle text-center">29.40</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Jun 31, 2024</span>
-                    </td>
-                    <td class="align-middle text-center">GPT-35-turbo</td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center">UNK</td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">38.00</td>
-                    <td class="align-middle text-center">36.00</td>
-                    <td class="align-middle text-center">27.40</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Jun 31, 2024</span>
-                    </td>
-                    <td class="align-middle text-center">
-                      GPT-35-turbo-instruct
-                    </td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center">UNK</td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">33.60</td>
-                    <td class="align-middle text-center">31.20</td>
-                    <td class="align-middle text-center">26.60</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Jun 31, 2024</span>
-                    </td>
-                    <td class="align-middle text-center">
-                      Phi-3-medium-128k-instruct
-                    </td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center"><b>13B</b></td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">30.60</td>
-                    <td class="align-middle text-center">25.00</td>
-                    <td class="align-middle text-center">21.60</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Jun 31, 2024</span>
-                    </td>
-                    <td class="align-middle text-center">Llama3-8b-instruct</td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center"><b>8B</b></td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">24.40</td>
-                    <td class="align-middle text-center">24.60</td>
-                    <td class="align-middle text-center">18.40</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Jun 31, 2024</span>
-                    </td>
-                    <td class="align-middle text-center">Mixtral-8x7b</td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center"><b>46.7B</b></td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">21.60</td>
-                    <td class="align-middle text-center">13.60</td>
-                    <td class="align-middle text-center">12.40</td>
-                  </tr>
+                  
+
                 </tbody>
               </table>
             </div>
-          </div> -->
+          </div>
+
+          <div class="list-group-item" id="illustration">
+            <h3>Spider 2.0 </h3>
+            <p>
+              <strong>Spider 2.0</strong> is a comprehensive code generation agent task that includes
+                  <strong>632</strong> examples. The agent has to interactively explore various types of databases, such
+                  as <em><u>BigQuery</u></em>, <em><u>Snowflake</u></em>, <em><u>Postgres</u></em>,
+                  <em><u>ClickHouse</u></em>, <em><u>DuckDB</u></em>, and <em><u>SQLite</u></em>. It is required to
+                  engage with complex SQL workflows, process extensive contexts, perform intricate reasoning, and
+                  generate multiple SQL queries with diverse operations, often exceeding 100 lines across multiple
+                  interactions.</p>
+          </div>
+          <div class="card card-outline-secondary">
+            <div class="table-wrapper">
+              <table class="table" id="ex-table">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col" rowspan="1"></th>
+                    <th
+                      scope="col"
+                      rowspan="1"
+                      class="align-middle text-center"
+                    >
+                      Method
+                    </th>
+                    <th scope="col" colspan="1" class="text-center">
+                      Score
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+
+                  </tr>
+      
+
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Nov 2, 2024</span>
+                  </td>
+                  <td class="align-middle text-center">Spider-Agent + o1-preview<br>
+                  </td>
+                  <td class="align-middle text-center"><b>17.01</b></td>
+                </tr>
+
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Nov 2, 2024</span>
+                  </td>
+                  <td class="align-middle text-center">Spider-Agent + GPT-4o<br>
+                  </td>
+                  <td class="align-middle text-center">10.13</td>
+                </tr>
+                
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Nov 2, 2024</span>
+                  </td>
+                  <td class="align-middle text-center">Spider-Agent + Claude-3.5-Sonnet<br>
+                  </td>
+                  <td class="align-middle text-center">9.02</td>
+                </tr>
+                <tr>
+                    <td
+                      scope="row"
+                      class="align-middle text-center counter-cell"
+                    >
+                      <span class="badge badge-secondary">Nov 2, 2024</span>
+                    </td>
+                    <td class="align-middle text-center">
+                      Spider-Agent + GPT-4<br />
+                    </td>
+                    <td class="align-middle text-center">8.86</td>
+                </tr>
+                <tr>
+                  <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Nov 2, 2024</span>
+                  </td>
+                  <td class="align-middle text-center">Spider-Agent + Qwen2.5-72B<br>
+                    
+                  </td>
+                  <td class="align-middle text-center">6.17</td>
+                </tr> 
+                  <tr>
+                    <td
+                      scope="row"
+                      class="align-middle text-center counter-cell"
+                    >
+                      <span class="badge badge-secondary">Nov 2, 2024</span>
+                    </td>
+                    <td class="align-middle text-center"> Spider-Agent + DeepSeek-V2.5<br>
+                    </td>
+                    <td class="align-middle text-center">5.22</td>
+                  </tr>
+
+
+                  <tr>
+                    <td
+                      scope="row"
+                      class="align-middle text-center counter-cell"
+                    >
+                      <span class="badge badge-secondary">Nov 2, 2024</span>
+                    </td>
+                    <td class="align-middle text-center">
+                      Spider-Agent + Gemini-Pro-1.5<br />
+                    </td>
+                    <td class="align-middle text-center">2.53</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="align-middle text-center counter-cell">
+                    <span class="badge badge-secondary">Nov 2, 2024</span>
+                    </td>
+                    <td class="align-middle text-center">Spider-Agent + Llama-3.1-405B<br>
+                    
+                    </td>
+                    <td class="align-middle text-center">2.21</td>
+                    </tr>
+                  
+
+                </tbody>
+              </table>
+            </div>
+          </div>
 
         </div>
       </div>
