@@ -1,0 +1,1035 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Spider2: A Realistic and Challenging Benchmark for SQL Generation">
+  <!-- <meta name="keywords" content="Reasoning-Intensive Retrieval Benchmark"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows</title>
+  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!--  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>-->
+  <!--  <script>-->
+  <!--    window.dataLayer = window.dataLayer || [];-->
+
+  <!--    function gtag() {-->
+  <!--      dataLayer.push(arguments);-->
+  <!--    }-->
+
+  <!--    gtag('js', new Date());-->
+
+  <!--    gtag('config', 'G-PYVRSFMDRL');-->
+  <!--  </script>-->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="static/images/favicon.png">
+
+  <link rel="stylesheet" href="./stylesheets/layout.css">
+  <link rel="stylesheet" href="./stylesheets/index.css">
+  <link rel="stylesheet" href="./bowe_componets/css/bootstrap.table.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://www.xlang.ai/">
+        <span class="icon">
+          <i class="fas fa-home"></i>
+        </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://yale-lily.github.io/spider">
+            Spider
+          </a>
+          <a class="navbar-item" href="https://github.com/HKUNLP/UnifiedSKG">
+            UnifiedSKG
+          </a>
+          <a class="navbar-item" href="https://github.com/Yushi-Hu/IC-DST">
+            IC-DST
+          </a>
+          <a class="navbar-item" href="https://github.com/HKUNLP/icl-selective-annotation">
+            Selective Annotation
+          </a>
+          <a class="navbar-item" href="https://lm-code-binder.github.io/">
+            Binder
+          </a>
+          <a class="navbar-item" href="https://ds1000-code-gen.github.io/">
+            DS-1000
+          </a>
+          <a class="navbar-item" href="https://instructor-embedding.github.io/">
+            Instructor
+          </a>
+          <a class="navbar-item" href="https://text-to-reward.github.io/">
+            Text2Reward
+          </a>
+          <a class="navbar-item" href="https://github.com/xlang-ai/OpenAgents">
+            OpenAgents
+          </a>
+          <a class="navbar-item" href="https://github.com/OpenLemur/lemur">
+            Lemur-70B
+          </a>
+          <a class="navbar-item" href="https://arks-codegen.github.io/">
+            ARKS
+          </a>
+          <a class="navbar-item" href="https://brightbenchmark.github.io/">
+            BRIGHT
+          </a>
+          <a class="navbar-item" href="https://os-world.github.io/">
+            OSWorld
+          </a>
+          <a class="navbar-item" href="https://spider2-v.github.io/">
+            Spider2-V
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<!--<section class="hero">-->
+<div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <h1 class="title is-1 publication-title">
+        Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows<br>
+      </h1>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!--  </section>-->
+
+<div class="columns is-centered">
+  <div class="is-size-5 publication-authors">
+    <span class="author-block">
+      <a href="https://lfy79001.github.io/">Fangyu Lei*</a><sup>1</sup>,</span>
+    <a href="https://chenjix.github.io/">Jixuan Chen*</a><sup>1</sup>,</span>
+    <a href="https://yuxiaooye.github.io/">Yuxiao Ye</a><sup>1</sup>,</span>
+    <a href="https://rhythmcao.github.io/">Ruisheng Cao</a><sup>1</sup>,</span>
+    <a href="https://scholar.google.com/citations?user=QzZOkfIAAAAJ&hl=en&oi=sra">Dongchan Shin</a><sup>1</sup>,</span>
+    <br>
+    <a href="https://hongjin-su.github.io/">Hongjin Su</a><sup>1</sup>,</span>
+    <a href="">Zhaoqing Suo</a><sup>1</sup>,</span>
+    <a href="https://gao-hongcheng.github.io/">Hongcheng Gao</a><sup>1</sup>,</span>
+    <a href="">Wenjing Hu</a><sup>1</sup>,</span>
+    <a href="https://pengcheng.in/">Pengcheng Yin</a><sup>4</sup>,</span> <br>
+    <a href="https://www.victorzhong.com/">Victor Zhong</a><sup>6</sup>,</span>
+    <a href="http://cmxiong.com/">Caiming Xiong</a><sup>2</sup>,</span>
+    <a href="https://sunruoxi.github.io/">Ruoxi Sun</a><sup>5</sup>,</span>
+    <a href="https://siviltaram.github.io/">Qian Liu</a><sup>3</sup>,</span>
+    <a href="https://www.sidaw.xyz/">Sida Wang</a><sup></sup>,</span>
+    <a href="https://taoyds.github.io/">Tao Yu</a><sup>1</sup>,</span>
+  </div>
+</div>
+
+
+
+
+<div class="columns is-centered">
+  <div class="is-size-5 publication-authors">
+    <!-- <span class="author-block">
+            <a href="https://openreview.net/profile?id=~Han-yu_Wang1">Han-yu Wang</a><sup>1</sup>,</span> -->
+    <!-- <span class="author-block">
+            <a href="https://taoyds.github.io/">Tao Yu</a><sup>1</sup></span> -->
+  </div>
+</div>
+
+<div class="columns is-centered">
+  <div class="is-size-5 publication-authors">
+    <span class="author-block"><sup>1</sup>The University of Hong Kong</span>
+    <span class="author-block"><sup>2</sup>Salesforce Research</span>
+    <span class="author-block"><sup>3</sup>Sea AI Lab</span> <br>
+    <span class="author-block"><sup>4</sup>Google Deepmind</span>
+    <span class="author-block"><sup>5</sup>Google Cloud AI Research</span>
+    <span class="author-block"><sup>6</sup>University of Waterloo</span>
+  </div>
+</div>
+
+<div class="column has-text-centered">
+  <div class="publication-links">
+    <!-- PDF Link. -->
+    <!--                <span class="link-block">-->
+    <!--                  <a href="https://arxiv.org/pdf/2011.12948" class="external-link button is-normal is-rounded is-dark">-->
+    <!--                    <span class="icon">-->
+    <!--                      <i class="fas fa-file-pdf"></i>-->
+    <!--                    </span>-->
+    <!--                    <span>Paper</span>-->
+    <!--                  </a>-->
+    <!--                </span>-->
+    <span class="link-block">
+      <a href="https://arxiv.org/abs/2411.07763" class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+          <i class="ai ai-arxiv"></i>
+        </span>
+        <span>Paper</span>
+      </a>
+    </span>
+    <!-- Video Link. -->
+    <!--                <span class="link-block">-->
+    <!--                  <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"-->
+    <!--                    class="external-link button is-normal is-rounded is-dark">-->
+    <!--                    <span class="icon">-->
+    <!--                      <i class="fab fa-youtube"></i>-->
+    <!--                    </span>-->
+    <!--                    <span>Video</span>-->
+    <!--                  </a>-->
+    <!--                </span>-->
+    <!-- Code Link. -->
+    <span class="link-block">
+      <a href="https://github.com/xlang-ai/Spider2" class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+          <i class="fab fa-github"></i>
+        </span>
+        <span>Code</span>
+      </a>
+    </span>
+    <!-- Doc. -->
+    <!--                <span class="link-block">-->
+    <!--                  <a href="https://timothyxxx.github.io/OSWorld/"-->
+    <!--                    class="external-link button is-normal is-rounded is-dark">-->
+    <!--                    <span class="icon">-->
+    <!--                      <i class="far fa-bookmark"></i>-->
+    <!--                    </span>-->
+    <!--                    <span>Doc</span>-->
+    <!--                  </a>-->
+    <!--                </span>-->
+    <!-- Dataset Link. -->
+    <span class="link-block">
+      <a href="https://github.com/xlang-ai/Spider2/blob/main/spider2/README.md"
+        class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+          <i class="far fa-images"></i>
+        </span>
+        <span>Data</span>
+      </a>
+    </span>
+    <!-- Data Viewer. -->
+    <!--                <span class="link-block">-->
+    <!--                  <a href="explorer.html" target="_blank" class="external-link button is-normal is-rounded is-dark">-->
+    <!--                    <span class="icon">-->
+    <!--                      <i class="fa fa-desktop"></i>-->
+    <!--                    </span>-->
+    <!--                    <span>Data Viewer</span>-->
+    <!--                  </a>-->
+    <!--                </span>-->
+    <!-- Slides Link. -->
+    <!--                <span class="link-block">-->
+    <!--                  <a href="https://docs.google.com/presentation/d/1-r889Nb9n7SeZqrj-ryNqJLoMzp7aGNU2ihO8nUdEcE/edit?usp=sharing"-->
+    <!--                    target="_blank" class="external-link button is-normal is-rounded is-dark">-->
+    <!--                    <span class="icon">-->
+    <!--                      <i class="fab fa-google"></i>-->
+    <!--                    </span>-->
+    <!--                    <span>Slides</span>-->
+    <!--                  </a>-->
+    <!--                </span>-->
+    <!-- Twitter Link. -->
+    <span class="link-block">
+      <a href="https://x.com/XLangNLP/status/1865896912555225587" target="_blank" class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+          <i class="fab fa-twitter"></i>
+        </span>
+        <span>Twitter</span>
+      </a>
+    </span>
+
+    <!-- <span class="link-block">
+                <a href="https://huggingface.co/spaces/mteb/leaderboard?task=retrieval&language=bright"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-book"></i>
+                  </span>
+                  <span>MTEB</span>
+                  </a>
+              </span> -->
+    <!-- Discord Link. -->
+    <!--                <span class="link-block">-->
+    <!--                  <a href="https://discord.gg/4Gnw7eTEZR" target="_blank"-->
+    <!--                    class="external-link button is-normal is-rounded is-dark">-->
+    <!--                    <span class="icon">-->
+    <!--                      <i class="fab fa-discord"></i>-->
+    <!--                    </span>-->
+    <!--                    <span>Discord</span>-->
+    <!--                  </a>-->
+    <!--                </span>-->
+
+  </div>
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Main Figure. -->
+    <h2 class="title is-3"></h2>
+    <div class="content has-text-justified">
+      <img src="images/Spider2.png" width="100%" alt="osworld task_demonstration" class="responsive-image">
+    </div>
+    <!--/ Main Figure. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <md-block>
+            Real-world enterprise text-to-SQL workflows often involve complex cloud or local data across various
+            database systems, multiple SQL queries in various dialects, and diverse operations from data transformation
+            to analytics.
+            We introduce Spider 2.0, an evaluation framework comprising 632 real-world text-to-SQL workflow problems
+            derived from enterprise-level database use cases.
+            The databases in Spider 2.0 are sourced from real data applications, often containing over 1,000 columns and
+            stored in local or cloud database systems such as BigQuery and Snowflake.
+            We show that solving problems in Spider 2.0 frequently requires understanding and searching through database
+            metadata, dialect documentation, and even project-level codebases.
+            This challenge calls for models to interact with complex SQL workflow environments, process extremely long
+            contexts, perform intricate reasoning, and generate multiple SQL queries with diverse operations, often
+            exceeding 100 lines, which goes far beyond traditional text-to-SQL challenges.
+            Our evaluations indicate that based on o1-preview, our code agent framework successfully solves only 17.0%
+            of the tasks, compared with 91.2% on Spider 1.0 and 73.0% on BIRD.
+            Our results on Spider 2.0 show that while language models have demonstrated remarkable performance in code
+            generation --- especially in prior text-to-SQL benchmarks --- they require significant improvement in order
+            to achieve adequate performance for real-world enterprise usage.
+            Progress on Spider 2.0 represents crucial steps towards developing intelligent, autonomous, code agents for
+            real-world enterprise settings.
+          </md-block>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="cover" id="contentCover">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="infoCard">
+          <div class="infoBody">
+
+
+            <div class="infoHeadline">
+              <h2>News</h2>
+            </div>
+
+
+            <style>
+              .scroll-container {
+                max-height: 400px;
+                /* 设置容器的最大高度 */
+                overflow-y: auto;
+                /* 添加垂直滚动条 */
+              }
+            </style>
+
+            <div class="scroll-container">
+              <div class="card card-outline-secondary mb-4" style="text-align: left;">
+                <div class="card-body" style="background-color: #F1F6F9;">
+                  <ul style="padding-left: 0;">
+                    <li style="list-style-type: none;"><span
+                        style="background-color: #22A699; color: white; padding: 2px 4px; border-radius: 5px;"><strong
+                          style="color: #FFE7CE">Nov. 12, 2024:</strong></span> We released Spider 2.0 full paper, data and code!
+                    </li>
+                    </li>
+                    <li style="list-style-type: none;"><span
+                        style="background-color: #22A699; color: white; padding: 2px 4px; border-radius: 5px;"><strong
+                          style="color: #FFE7CE">Aug. 28, 2024:</strong></span> We released a smaller version of Spider
+                      2.0 (~ 25% of the full dataset) containing 190 examples to give users early access. As this is a preliminary release, there may
+                      be errors. Your feedback would be invaluable in refining the dataset. Stay tuned!</li>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="infoHeadline">
+              <h2>Why Spider 2.0?</h2>
+            </div>
+
+
+            <p align="left">
+            <div class="left">
+              In 2018, we introduced <a href="https://yale-lily.github.io/spider"><b>Spider
+                  1.0</b> </a>, <a href="https://yale-lily.github.io/sparc"><b>SParC</b></a>, and <a
+                href="https://yale-lily.github.io/cosql"><b>CoSQL</b></a> as part of the Yale Semantic Parsing and
+              Text-to-SQL
+              Challenge Series, attracting over 300 submissions from leading research labs worldwide.<br><br>
+
+              Now, in the era of Large Language Models (LLMs), we present <b>Spider 2.0</b> to advance code generation,
+              particularly text-to-SQL capabilities.<br><br>
+
+              This new benchmark offers a more realistic and challenging test of LLMs' performance on complex
+              enterprise-level text-to-SQL workflows, involving complex data environments (e.g., >3000 columns),
+              multiple SQL dialects (e.g., BigQuery, Snowflake), and diverse operations (e.g., transformation,
+              analytics).<br><br>
+              
+              Notably, even the advanced LLMs-o1-preview solve only 17.1% of <b>Spider 2.0</b> tasks. 
+              For widely-used models like GPT-4o, the success rate is only 10.1% on <b>Spider 2.0</b> tasks, 
+              compared to 86.6% on <a href="https://yale-lily.github.io/spider">Spider 1.0</a>, 
+              underscoring the substantial challenges posed by <b>Spider 2.0</b>.<br><br>
+
+
+              <table style="font-size: 12px; width: 100%;">
+                <tr>
+                    <th>Setting</th>
+                    <th>Task Type</th>
+                    <th>#Examples</th>
+                    <th>Databases</th>
+                    <th>Cost</th>
+                </tr>
+                <tr>
+                    <td><strong>Spider 2.0</strong></td>
+                    <td>Code agent task</td>
+                    <td>632</td>
+                    <td>BigQuery(214), Snowflake(198), Postgres(10), ClickHouse(7), SQLite(135), DuckDB (DBT)(68)</td>
+                    <td>Some cost incurred</td>
+                </tr>
+                <tr>
+                    <td><strong>Spider 2.0-Snow</strong></td>
+                    <td>Text-to-SQL task</td>
+                    <td>547</td>
+                    <td>Snowflake(547)</td>
+                    <td><span style="color: red;">NO COST!😊</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Spider 2.0-Lite</strong></td>
+                    <td>Text-to-SQL task</td>
+                    <td>547</td>
+                    <td>BigQuery(214), Snowflake(198), SQLite(135)</td>
+                    <td>Some cost incurred</td>
+                </tr>
+            </table>
+            
+
+            </div>
+
+
+
+            <!-- <div class=" infoHeadline">
+                    <h2>Settings</h2>
+            </div> -->
+
+            <!-- <p align="left">
+              To meet the diverse research needs, we set up Spider 2.0 with two settings. Most SQLs in these two
+              settings overlap.
+            </p>
+
+            <p align="left">
+              <strong>Spider 2.0: Code agent setting.</strong> SQL generation in a real-world setting requires
+              automatically exploring complex databases, using Python, SQL, and command-line tools. Project-level
+              Text-to-SQL task is also involved in this setting.
+            </p>
+
+            <p align="left">
+              <strong>Spider 2.0-lite: Traditional Text2SQL Setting.</strong> Focusing on Text2SQL, with detailed
+              database metadata.
+            </p>
+            <img src="images/Spider2.png" alt="test image" width="550"> -->
+
+
+            <!-- <div class="infoHeadline">
+              <h2>Spider 2.0</h2>
+            </div>
+            <p align="left">
+            <div class="left">
+              <span style="white-space: pre-line">Spider 2.0 is a realistic and challenging Text-to-SQL dataset,
+                significantly more difficult and closer to real-world scenarios than any previous Text2SQL benchmarks.
+                We provide detailed database metadata, external knowledge, and SQL dialect documents. You can quickly
+                experiment with your Text-to-SQL methods on Spider2, rather than Spider1. 🤗</span><br> -->
+            <!--                       <a class="btn actionBtn" href="https://brightbenchmark.github.io/">Paper</a>-->
+            <!--                       <a class="btn actionBtn" href="https://github.com/xlang-ai/bright">Code</a>-->
+            <!--                       <a class="btn actionBtn" href="https://huggingface.co/datasets/xlangai/BRIGHT">Data</a>-->
+            <!--                       <a class="btn actionBtn" href="https://huggingface.co/datasets/xlangai/BRIGHT">Twitter</a>-->
+            <!-- </div>
+            </p> -->
+
+            <div class="infoHeadline">
+              <h2>Spider 2.0-lite</h2>
+            </div>
+
+            <p align="left">
+              To meet with research interests in traditional Text2SQL settings, we also release a subset of Spider 2.0
+              called <a href="https://github.com/xlang-ai/Spider2/tree/main/spider2-lite#spider-20-lite"><b>Spider
+                  2.0-Lite</b></a> which is more self-contained, to support faster development and evaluation.
+            </p>
+
+            <div class="infoHeadline">
+              <h2>Spider 2.0-Snow</h2>
+            </div>
+
+            <p align="left">
+              Spider 2.0-Snow includes 547 examples, all hosted on Snowflake, which offers participants free quotas. If
+              you want to test performance on a single SQL dialect, don’t hesitate to use Spider 2.0-Snow.
+            </p>
+
+            <div class="infoHeadline">
+              <h2>Submission</h2>
+            </div>
+
+            <p align="left">
+              Refer to the
+              <a
+                href="https://github.com/xlang-ai/Spider2#-quickstart"><b>Quick Start</b></a>
+              to run your experiments on Spider 2.0, Spider 2.0-snow, or Spider 2.0-lite.
+              For submission, provide a clear README, compressed code that passes your dev evaluation, any additional API keys required, and a report of prompt token counts for cost estimation.
+              Follow the <a
+              href="https://docs.google.com/document/d/1sCobAqJZcko-Vl3biOycwvCIR7kTwBPrhsgVfvaX1Fg/edit?usp=sharing"><b>Submission
+              Guideline</b></a> for evaluation on full dataset. Usually, we will return your results in 10 days!
+          
+            </p>
+
+            <div class="infoHeadline">
+              <h2>Acknowledgement</h2>
+            </div>
+
+
+            <p align="left">
+              We thank Snowflake for their generous support in hosting the Spider 2.0 Challenge. We also thank Tianbao Xie, Yiheng Xu, Fan Zhou, Yuting Lan, Per Jacobsson, Yiming Huang, Canwen Xu, Zhewei Yao, and Binyuan Hui for their helpful feedback on this work. The leaderboard submission guidelines are greatly inspired by <a href="https://bird-bench.github.io/">BIRD-SQL</a>, and we thank them for their contributions.
+            </p>
+            
+            <div style="text-align: center;">
+              <img src="./images/snowflake.png" alt="Snowflake Logo" style="width:250px; margin-top:10px;">
+            </div>
+            
+            
+
+
+            <div class="infoHeadline">
+              <h2>Data Examples</h2>
+            </div>
+            <img src="images/homepage_examples.png" alt="test image" width="550">
+
+            <!-- <p align="left">
+              <strong>Query-level Task:</strong> we provide the Spider 2.0-lite setting for almost all examples of
+              Spider2, which differs from traditional text-to-SQL. The most distinctive feature is that it doesn't
+              provide predefined schema information; the methods need to explore the database automatically and
+              interactively write SQL. (Somewhat similar to the setting in <a
+                href="https://github.com/princeton-nlp/intercode">Intercode</a>)
+            </p>
+
+            <p align="left">
+              <strong>Project-level Task:</strong> We also propose a new novel SQL generation task based on the DBT
+              project, which is a highly realistic SQL generation scenario commonly used in industry development,
+              requiring the completion of a complex data transformation task. (Somewhat similar to the setting in <a
+                href="https://www.swebench.com/">SWE-Bench</a>.)
+            </p> -->
+
+
+            <!--                     <div class="infoHeadline">-->
+            <!--                       <h2>Data Examples</h2>-->
+            <!--                    </div>-->
+            <!--                    <p align="left">-->
+            <!--                    <div class="left"> Some examples look like the following:-->
+            <!--                    </div>-->
+            <!--                    </p>-->
+            <!--                    <img src="images/bright_examples.png" alt="test image" width="600">-->
+
+            <div class="infoHeadline">
+              <h2>Have Questions?</h2>
+            </div>
+            <p align="left">
+            <div class="left">Ask us questions at our <a href="https://github.com/xlang-ai/Spider2/issues">Github issues
+                page</a> or contact <a href="mailto:lfy79001@gmail.com">Fangyu Lei</a>, <a
+                href="https://chenjix.github.io/">Jixuan Chen</a>, <a href="https://rhythmcao.github.io/">Ruisheng
+                Cao</a> or <a href="https://yuxiaooye.github.io/">Yuxiao Ye</a> for more information.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-t is-max-desktop">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="infoCard">
+              <div class="infoBody">
+                <div class="infoHeadline">
+                  <h2>Leaderboard</h2>
+                </div>
+                <div class="tabs is-centered example_lst">
+                  <ul>
+                    <li class="is-active"><a title="Spider 2.0-snow">Spider 2.0-Snow</a></li>
+                    <li><a title="Spider 2.0-lite">Spider 2.0-lite</a></li>
+                    <li><a title="Spider2">Spider 2.0</a></li>
+                  </ul>
+                </div>
+                <script type="text/javascript">
+                  document.querySelectorAll(".example_lst li").forEach(e => {
+                    e.addEventListener("click", Click_1)
+                  })
+
+                  function Click_1(eve) {
+                    const iTxt = eve.srcElement.innerText
+                    for (let v of document.querySelectorAll(".example_lst a")) {
+                      if (iTxt === v.innerText) {
+                        v.parentElement.className = "is-active";
+                      } else {
+                        v.parentElement.className = "";
+                      }
+                    }
+                    for (let block of document.getElementsByClassName('lib_examples')) {
+                      block.style.display = (block.title === iTxt) ? 'block' : 'none';
+                    }
+                  }
+
+                </script>
+
+
+                <div title="Spider 2.0-Snow" class="lib_examples" id="BoardPanel1" style="display: block;">
+                  <strong>Spider 2.0-Snow</strong> is a self-contained text-to-SQL task that includes well-prepared database
+                  metadata and documentation, 
+                  includes <strong>547</strong> examples, all hosted on
+                  <em><u>Snowflake</u></em>, which offers participants free quotas. If you want to test performance on
+                  <em><u>a single SQL dialect</u></em>, don’t hesitate to use <strong>Spider 2.0-Snow</strong>.
+                  <table class="table performanceTable">
+                    <tr>
+                      <th>Rank</th>
+                      <th>Method</th>
+                      <!--                              <th>Details</th>-->
+                      <th>Score</th>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>1</p>
+                        <span class="date label label-default">Jan 28, 2025</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        ReFoRCE + o1-Preview
+                        <p style="font-size: 15;"> <i> Hao AI Lab x Snowflake </i> </p> 
+                        <p style="font-size: 14;"> <a href="https://arxiv.org/abs/2502.00675" class="paperlink">[Deng et al. '25]</a> </p>
+                      </td>
+                      <td><b>26.69</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>2</p>
+                        <span class="date label label-default">Nov 30, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + o1-preview
+                      </td>
+                      <td><b>20.29</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>3</p>
+                        <span class="date label label-default">Feb 1, 2025</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + o3-mini
+                      </td>
+                      <td><b>16.09</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>4</p>
+                        <span class="date label label-default">Nov 30, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + GPT-4o
+                      </td>
+                      <td><b>10.79</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>5</p>
+                        <span class="date label label-default">Jan 3, 2025</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        CollideNL2SQL + GPT-4o
+                        <p style="font-size: 15;"> <i> Collide Tech </i> </p>
+                      </td>
+                      <td><b>9.68</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>6</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + Claude-3.5-Sonnet
+                      </td>
+                      <td><b>8.04</b></td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        <p>7</p>
+                        <span class="date label label-default">Jan 20, 2025</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + DeepSeek-R1
+                      </td>
+                      <td><b>7.68</b></td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        <p>8</p>
+                        <span class="date label label-default">Jan 20, 2025</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + DeepSeek-V3-Chat
+                      </td>
+                      <td><b>7.31</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>9</p>
+                        <span class="date label label-default">Nov 30, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + Qwen2.5-Coder-32B-Instruct
+                      </td>
+                      <td><b>5.12</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>10</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Dail-SQL + GPT-4o
+                      </td>
+                      <td><b>2.20</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>11</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        CHESS + GPT-4o
+                      </td>
+                      <td><b>1.28</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>12</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        DIN-SQL + GPT-4o
+                      </td>
+                      <td><b>0.00</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>13</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        SFT CodeS-15B
+                      </td>
+                      <td><b>0.00</b></td>
+                    </tr>
+                  </table>
+                </div>
+
+
+
+                <div title="Spider 2.0-lite" class="lib_examples" id="BoardPanel5" style="display: none;">
+                  <strong>Spider 2.0-lite</strong> is a self-contained text-to-SQL task that includes well-prepared <a
+                    href="https://github.com/xlang-ai/Spider2/tree/main/spider2-lite/resource/databases">database
+                    metadata</a> and <a
+                    href="https://github.com/xlang-ai/Spider2/tree/main/spider2-lite/resource/documents">documentation</a>.
+                  This setup enables a text-in, text-out approach, facilitating faster development and evaluation.
+                  Spider 2.0-lite, which has <strong>547</strong> examples, is designed to handle queries for
+                  <em><u>BigQuery</u></em>, <em><u>Snowflake</u></em>, and <em><u>SQLite</u></em> databases.
+                  <br>
+
+
+                  <table class="table performanceTable">
+                    <tr>
+                      <th>Rank</th>
+                      <th>Method</th>
+                      <th>Score</th>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>1</p>
+                        <span class="date label label-default">Jan 28, 2025</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        ReFoRCE + o1-Preview
+                        <p style="font-size: 15;"> <i> Hao AI Lab x Snowflake </i> </p>
+                        <p style="font-size: 14;"> <a href="https://arxiv.org/abs/2502.00675" class="paperlink">[Deng et al. '25]</a> </p>
+                      </td>
+                      <td><b>24.50</b></td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        <p>2</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + o1-preview
+                      </td>
+                      <td><b>20.66</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>3</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + GPT-4o
+                      </td>
+                      <td><b>10.87</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>4</p>
+                        <span class="date label label-default">Dec 31, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Duo
+                        <p style="font-size: 15;"> <i> Anonymous </i> </p>
+                      </td>
+                      <td><b>8.96</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>5</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + Claude-3.5-Sonnet
+                      </td>
+                      <td><b>8.32</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>6</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + Qwen2.5-Coder-32B-Instruct
+                      </td>
+                      <td><b>5.85</b></td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        <p>7</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        DailSQL + GPT-4o
+                      </td>
+                      <td><b>5.68</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>8</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        CHESS + GPT-4o
+                      </td>
+                      <td><b>3.84</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>9</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        DIN-SQL + GPT-4o
+                      </td>
+                      <td><b>1.46</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>10</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        SFT CodeS-15B
+                      </td>
+                      <td><b>0.73</b></td>
+                    </tr>
+
+                  </table>
+                </div>
+
+
+
+                <div title="Spider 2.0" class="lib_examples" id="BoardPanel4" style="display: none;">
+                  <strong>Spider 2.0</strong> is a comprehensive code generation agent task that includes
+                  <strong>632</strong> examples. The agent has to interactively explore various types of databases, such
+                  as <em><u>BigQuery</u></em>, <em><u>Snowflake</u></em>, <em><u>Postgres</u></em>,
+                  <em><u>ClickHouse</u></em>, <em><u>DuckDB</u></em>, and <em><u>SQLite</u></em>. It is required to
+                  engage with complex SQL workflows, process extensive contexts, perform intricate reasoning, and
+                  generate multiple SQL queries with diverse operations, often exceeding 100 lines across multiple
+                  interactions.
+                  <br>
+                  <table class="table performanceTable">
+                    <tr>
+                      <th>Rank</th>
+                      <th>Method</th>
+                      <!--                              <th>Details</th>-->
+                      <th>Score</th>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>1</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + o1-preview
+                      </td>
+                      <td><b>17.01</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>2</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + GPT-4o
+                      </td>
+                      <td><b>10.13</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>3</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + Claude-3.5-Sonnet
+                      </td>
+                      <td><b>9.02</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>4</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + GPT-4
+                      </td>
+                      <td><b>8.86</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>5</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + Qwen2.5-72B
+                      </td>
+                      <td><b>6.17</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>6</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + DeepSeek-V2.5
+                      </td>
+                      <td><b>5.22</b></td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <p>7</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + Gemini-Pro-1.5
+                      </td>
+                      <td><b>2.53</b></td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        <p>8</p>
+                        <span class="date label label-default">Nov 2, 2024</span>
+                      </td>
+                      <td style="word-break:break-word;">
+                        Spider-Agent + Llama-3.1-405B
+                      </td>
+                      <td><b>2.21</b></td>
+                    </tr>
+
+                  </table>
+                </div>
+
+
+
+
+
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
