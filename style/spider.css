@@ -141,10 +141,6 @@ span.line {
     background: none !important;
 }
 
-#spider-title {
-    color: #bff5d1
-}
-
 #logo-img {
     display: inline;
     max-height: 200px;
@@ -240,22 +236,8 @@ span.line {
     width: 100%;
     text-transform: none;
     background-color: #1F7872;
-    border-radius: 50px;
 }
 
-.btn-d {  
-    color: #fff;
-    font-weight: 400;
-    width: 100%;
-    text-transform: none;
-    background-color: #615EFC;
-    border-radius: 50px; 
-  } 
-
-.btn-d:hover {
-    background-color: #FF6969;
-    /* Change the background color when the cursor is over the button */
-}
 
 #button-row-b {
     display: flex;

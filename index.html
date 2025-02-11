@@ -27,10 +27,338 @@
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
     />
-
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Custom styles for this template -->
     <link href="./style/clean-blog.min.css" rel="stylesheet" />
     <link href="./style/spider.css" rel="stylesheet" />
+
+    <style>
+      /* All fonts changed to Lato */
+      header.masthead .page-heading,
+      header.masthead .post-heading,
+      header.masthead .site-heading {
+        padding: 50px 0 75px;
+      }
+      
+      #main {
+        font-size: 20px;
+      }
+      
+      body {
+        font-family: 'Lato', sans-serif;
+      }
+      
+      #main h1,
+      #main h2,
+      #main h3,
+      #main h4 {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 10px 0;
+      }
+      #main h5,
+      #main h6 {
+        font-weight: 600;
+        margin: 5px 0;
+      }
+
+      #spider-title {
+        font-family: 'Lato', sans-serif;
+        font-size: 80px;
+        color: #bff5d1;
+      }
+      
+      a {
+        color: #17a2b8;
+      }
+      
+      .list-group-item p {
+        margin: 5px 0;
+      }
+      
+      .card {
+        margin-bottom: 10px;
+      }
+      
+      .list-group {
+        margin-bottom: 10px;
+      }
+      
+      .card-header {
+        font-family: 'Lato', sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        background: #eee;
+      }
+      
+      .badge {
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+      }
+      
+      code,
+      pre {
+        background: #eee;
+        padding: 1px 3px;
+      }
+      
+      .table td,
+      .table th {
+        padding: 0.42em;
+      }
+      
+      .table {
+        margin-top: 8px;
+      }
+      
+      .far,
+      .fas {
+        font-size: 20px;
+      }
+      
+      .affiliation {
+        font-style: italic;
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+      }
+      
+      .paperlink {
+        font-size: 18px;
+        font-family: 'Lato', sans-serif;
+      }
+      
+      .crossed {
+        position: relative;
+        padding: 0.1rem;
+        overflow: hidden;
+      }
+      
+      .crossed:before,
+      .crossed:after {
+        position: absolute;
+        content: '';
+        background: #dc3545 !important;
+        display: block;
+        width: 20%;
+        height: 2px;
+        transform: rotate(-45deg);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 1px;
+      }
+      
+      .crossed:after {
+        transform: rotate(45deg);
+      }
+      
+      .supfact {
+        color: #28a745;
+      }
+      
+      span.line {
+        display: inline-block;
+      }
+      
+      .data-paragraph,
+      .data-question,
+      .data-answer {
+        margin-bottom: 8px;
+        transition: height 0.2s;
+      }
+      
+      .data-paragraph .paragraph-title {
+        color: #888888;
+      }
+      
+      .data-paragraph .supfact {
+        background: #bbffcc;
+        border-radius: 3px;
+        color: inherit;
+        transition: background-color 0.2s;
+      }
+      
+      .data-paragraph .hide {
+        background: none !important;
+      }
+      
+      #bird-title {
+        color: #155E95;
+      }
+      
+      #logo-img {
+        display: inline;
+        max-height: 200px;
+        cursor: pointer;
+        transition: all 0.6s;
+      }
+      
+      #logo-img:hover {
+        transform: scale(1.4);
+      }
+      
+      #caption {
+        font-size: 30px;
+        font-family: 'Lato', sans-serif;
+      }
+      
+      #introduction {
+        font-size: 20px;
+        font-family: 'Lato', sans-serif;
+      }
+      
+      #paper {
+        background-color: #34314c;
+        border-color: #34314c;
+      }
+      
+      .column-img {
+        max-width: 100%;
+      }
+      
+      #illustration {
+        font-family: 'Lato', sans-serif;
+      }
+      
+      .dataset-btn {
+        background-color: #1F7872;
+        min-width: 50% !important;
+      }
+
+      .btn-d {  
+        color: #fff;
+        font-family: 'Lato', sans-serif;
+        font-size: 20px;
+        font-weight: 1000;
+        width: 100%;
+        text-transform: none;
+        background-color: #615EFC;
+        border-radius: 50px; 
+        display: inline-block;
+      } 
+
+      .btn-d:hover {
+          background-color: #FF6969;
+          /* Change the background color when the cursor is over the button */
+      }
+
+    
+      #citation {
+        font-size: 0.75em;
+        overflow: auto;
+        border: 1px solid #999;
+        margin: 0 4px;
+        padding: 8px;
+        border-radius: 2px;
+      }
+      
+      .flex-box {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        padding: 15px;
+      }
+      
+      .flex-box > div {
+        border-radius: 5px;
+        padding: 8px;
+      }
+      
+      #header-color {
+        background-color: #E1EACD;
+      }
+      
+      #button-group {
+        width: 100%;
+      }
+      
+      .button-row {
+        width: 80%;
+        margin: 0 auto;
+        padding: 5px;
+      }
+      
+      
+      .btn-d:hover {
+        background-color: #FF6969;
+      }
+      
+      .btn-b {
+        color: #fff;
+        font-weight: 400;
+        text-transform: none;
+        background-color: #1F7872;
+        border-radius: 50px;
+      }
+      
+      /* The row for train/dev is removed; .btn-round can remain if needed */
+      .btn-round {
+        height: auto;
+        transition: background-color 0.3s;
+      }
+      
+      .btn {
+        padding: 8px;
+      }
+      
+      [data-tooltip]:hover::after {
+        font-variant-caps: normal;
+        content: attr(data-tooltip);
+        position: absolute;
+        border: 1px solid black;
+        background: #eee;
+        padding: 0.25em;
+        border-radius: 2px;
+      }
+      
+      .table-wrapper {
+        display: block;
+        width: auto;
+        padding: 0.5rem;
+      }
+      
+      /* Leaderboard table styling */
+      #ex-table {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      /* Center all header and cell content */
+      #ex-table th, #ex-table td {
+        text-align: center;
+        vertical-align: middle;
+      }
+      
+      /* Custom cell classes */
+      .rank-cell {
+        font-weight: bold;
+        padding: 5px;
+        background: #f8f9fa;
+        border-radius: 4px;
+      }
+      /* Increase model cell width to 60% */
+      .model-cell {
+        width: 60%;
+      }
+      /* Smaller date-cell rectangle */
+      .date-cell {
+        font-size: 0.75em;
+        color: #ffffff;
+        background-color: #574964;
+        padding: 1px 4px;
+        border-radius: 5px;
+        display: inline-block;
+      }
+    </style>
+
+
+
   </head>
 
   <body>
@@ -51,12 +379,14 @@
         <div class="container">
         
           <div class="row">
-            <div class="col-lg-10 col-md-12 mx-auto">
+            <div class="col-lg-12 col-md-12 mx-auto">
               <div class="row site-heading flex-box">
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                   <div class="align-middle">
                     <h1 id="spider-title">Spider 2.0</h1>
                     <span class="subheading" id="caption">Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows</span>
+                    <br>
+                    <span class="subheading" id="caption">ICLR 2025 <span style="color: #bff5d1;">Oral</span></span>
                   </div>
                 </div>
               </div>
@@ -67,27 +397,27 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container" id="main">
+    <div class="container" id="main" style="max-width: 1400px;">
       <div class="row">
         <div class="col-lg-5">
           <div class="list-group">
             <div class="list-group-item" id="introduction">
               <!-- <div style="display: grid; grid-template-columns: auto auto; align-items: center;"> -->
               <h4>About Spider 2.0</h4>
-              <img src="https://badges.toozhao.com/badges/01JKQPJWT9GDEZW05QBNHTPE7S/green.svg" />
+              <!-- <img src="https://badges.toozhao.com/badges/01JKQPJWT9GDEZW05QBNHTPE7S/green.svg" /> -->
               <!-- </div> -->
               <p>
                 Spider 2.0 is an evaluation framework comprising 632 real-world text-to-SQL workflow problems derived from enterprise-level database use cases. The databases in Spider 2.0 are sourced from real data applications, often containing over 1,000 columns and stored in local or cloud database systems such as BigQuery and Snowflake. 
-                <!-- We show that solving problems in Spider 2.0 frequently requires understanding and searching through database metadata, dialect documentation, and even project-level codebases.  -->
                 This challenge calls for models to interact with complex SQL workflow environments, process extremely long contexts, perform intricate reasoning, and generate multiple SQL queries with diverse operations, often exceeding 100 lines, which goes far beyond traditional text-to-SQL challenges.
               </p>
+              <br>
               <div id="button-group">
                 <div class="button-row">
                   <a
                     href="https://arxiv.org/abs/2411.07763"
                     target="_blank"
                   >
-                    <button type="button" class="btn btn-a">Paper</button>
+                    <button type="button" class="btn btn-d">Paper</button>
                   </a>
                 </div>
                 <div class="button-row">
@@ -95,10 +425,10 @@
                     href="https://github.com/xlang-ai/Spider2"
                     target="_blank"
                   >
-                    <button type="button" class="btn btn-a">Code</button>
+                    <button type="button" class="btn btn-d">Code</button>
                   </a>
                 </div>
-                <div class="button-row">
+                <!-- <div class="button-row">
                   <a
                     href="https://github.com/xlang-ai/Spider2/blob/main/spider2/README.md"
                     target="_blank"
@@ -107,7 +437,7 @@
                       Data
                     </button>
                   </a>
-                </div>
+                </div> -->
                 <!-- <div class="button-row">
                   <a
                     href="https://bird-critic.github.io/"
@@ -231,35 +561,31 @@
                   underscoring the substantial challenges posed by <b>Spider 2.0</b>.<br><br>
     
     
-                  <table style="font-size: 12px; width: 100%;">
+                  <table border="1" style="font-size: 20px; width: 100%; border-collapse: collapse;">
                     <tr>
                         <th>Setting</th>
-                        <th>Task Type</th>
                         <th>#Examples</th>
                         <th>Databases</th>
                         <th>Cost</th>
                     </tr>
                     <tr>
-                        <td><strong>Spider 2.0</strong></td>
-                        <td>Code agent task</td>
-                        <td>632</td>
-                        <td>BigQuery(214), Snowflake(198), Postgres(10), ClickHouse(7), SQLite(135), DuckDB (DBT)(68)</td>
-                        <td>Some cost incurred</td>
-                    </tr>
-                    <tr>
                         <td><strong>Spider 2.0-Snow</strong></td>
-                        <td>Text-to-SQL task</td>
                         <td>547</td>
                         <td>Snowflake(547)</td>
                         <td><span style="color: red;">NO COST!😊</span></td>
                     </tr>
                     <tr>
                         <td><strong>Spider 2.0-Lite</strong></td>
-                        <td>Text-to-SQL task</td>
                         <td>547</td>
                         <td>BigQuery(214), Snowflake(198), SQLite(135)</td>
                         <td>Some cost incurred</td>
                     </tr>
+                    <!-- <tr>
+                      <td><strong>Spider 2.0</strong></td>
+                      <td>632</td>
+                      <td>BigQuery(214), Snowflake(198), Postgres(10), ClickHouse(7), SQLite(135), DuckDB (DBT)(68)</td>
+                      <td>Some cost incurred</td>
+                    </tr> -->
                 </table>
                 </div>
             </div>
