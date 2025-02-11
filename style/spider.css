@@ -9,7 +9,7 @@ header.masthead .site-heading {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 
@@ -40,14 +40,14 @@ a {
 }
 
 .card-header {
-    font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+    font-family: "Arial","Open Sans", "Helvetica", sans-serif;
     font-weight: 300;
     font-size: 1.25rem;
     background: #eee;
 }
 
 .badge {
-    font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+    font-family: "Arial", "Open Sans", "Helvetica", sans-serif;
     font-weight: 300;
 }
 
@@ -73,7 +73,7 @@ pre {
 
 .affiliation {
     font-style: italic;
-    font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+    font-family: "Arial","Open Sans", "Helvetica", sans-serif;
     font-weight: 300;
     font-size: .75rem;
 }
