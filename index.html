@@ -433,7 +433,7 @@
               <br>
 
 
-              <div id="button-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div id="button-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
                 <a href="https://arxiv.org/abs/2411.07763" target="_blank">
                   <button type="button" class="btn btn-d">
                     <span class="icon">
@@ -510,32 +510,113 @@
                   class="card card-outline-secondary mb-4"
                   style="text-align: left"
                 >
-                  <div class="card-body" style="background-color: #f1f6f9">
-                    <ul style="padding-left: 0">
-                      <li style="list-style-type: none">
-                        <span
-                          style="
-                            background-color: #B03052;
-                            color: white;
-                            padding: 2px 4px;
-                            border-radius: 5px;
-                          "
-                          ><strong style="color: #ffe7ce">Nov. 12, 2024:</strong></span> We released Spider 2.0 full paper, data and code!
-                        
-                      </li>
-                      <!--                           <li style="list-style-type: none;"><span style="background-color: #22A699; color: white; padding: 2px 4px; border-radius: 5px;"><strong style="color: #FFE7CE">May. 27, 2024:</strong></span> Glad to share our paper <a href="https://arxiv.org/abs/2405.15307">Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation (TA-SQL)</a>, which will appear at <code><strong>ACL 2024</strong></code> Findings. This is a light but effective method to calbriate hallucinations of text-to-SQL generation. Additionally, we firstly introduce Pythonic prompts for text-to-SQL and include results on open-source LLMs.</li> -->
-                      <li style="list-style-type: none">
-                        <span
-                          style="
-                            background-color: #B03052;
-                            color: white;
-                            padding: 2px 4px;
-                            border-radius: 5px;
-                          "
-                          ><strong style="color: #ffe7ce">Aug. 28, 2024:</strong></span> We released a smaller version of Spider 2.0 (~ 25% of the full dataset) containing 190 examples to give users early access. As this is a preliminary release, there may be errors. Your feedback would be invaluable in refining the dataset. Stay tuned!
-                      </li>
-                    </ul>
-                  </div>
+                <div class="card-body" style="background-color: #f1f6f9">
+                  <ul style="padding-left: 0">
+                    <li style="list-style-type: none">
+                      <span
+                        style="
+                          background-color: #B03052;
+                          color: white;
+                          padding: 2px 4px;
+                          border-radius: 5px;
+                        "
+                      >
+                        <strong style="color: #ffe7ce">2025-01-10:</strong>
+                      </span>
+                      Please refer to the
+                      <a
+                        href="https://docs.google.com/document/d/1a69mxO7m1nMndXp8H_-aggvYDbcbiS3rV9GPXEw-DeM/edit?usp=sharing"
+                        style="text-decoration: underline; color: #B03052"
+                        >data update log</a
+                      >
+                      to track changes in the evaluation examples. The
+                      <a
+                        href="https://spider2-sql.github.io/"
+                        style="text-decoration: underline; color: #B03052"
+                        >leaderboard</a
+                      >
+                      results will also change dynamically accordingly.
+                    </li>
+                    <li style="list-style-type: none">
+                      <span
+                        style="
+                          background-color: #B03052;
+                          color: white;
+                          padding: 2px 4px;
+                          border-radius: 5px;
+                        "
+                      >
+                        <strong style="color: #ffe7ce">2025-01-07:</strong>
+                      </span>
+                      Please note that we do not recommend using the Spider 2.0 Gold SQL we released for SFT,
+                      as it may affect the fairness of evaluation and hinder better benchmarking of the model's SQL capabilities.
+                      The release of Gold SQL is intended to help users design prompts.
+                    </li>
+                    <li style="list-style-type: none">
+                      <span
+                        style="
+                          background-color: #B03052;
+                          color: white;
+                          padding: 2px 4px;
+                          border-radius: 5px;
+                        "
+                      >
+                        <strong style="color: #ffe7ce">2024-12-26:</strong>
+                      </span>
+                      <strong>Using Spider-Agent to benchmark your LLMs!</strong>
+                      Considering the widespread attention to the traditional text-to-SQL setting,
+                      we now recommend using
+                      <a
+                        href="https://github.com/xlang-ai/Spider2/tree/main/methods/spider-agent-lite"
+                        style="text-decoration: underline; color: #B03052"
+                        >spider-agent-lite</a
+                      >
+                      and
+                      <a
+                        href="https://github.com/xlang-ai/Spider2/tree/main/methods/spider-agent-snow"
+                        style="text-decoration: underline; color: #B03052"
+                        >spider-agent-snow</a
+                      >
+                      to work with
+                      <a
+                        href="https://github.com/xlang-ai/Spider2/tree/main/spider2-lite/evaluation_suite"
+                        style="text-decoration: underline; color: #B03052"
+                        >spider2-lite</a
+                      >
+                      and
+                      <a
+                        href="https://github.com/xlang-ai/Spider2/tree/main/spider2-snow/evaluation_suite"
+                        style="text-decoration: underline; color: #B03052"
+                        >spider2-snow</a
+                      >
+                      for benchmarking your LLMs.
+                      The final output should be CSV files, not SQLs.
+                    </li>
+                    <li style="list-style-type: none">
+                      <span
+                        style="
+                          background-color: #B03052;
+                          color: white;
+                          padding: 2px 4px;
+                          border-radius: 5px;
+                        "
+                      >
+                        <strong style="color: #ffe7ce">2024-12-24:</strong>
+                      </span>
+                      Considering the many evaluation requirements, we have decided to
+                      <strong>release all examples and gold answers for self-evaluation</strong>.
+                      However, only a small amount of gold SQL is available. The leaderboard is still active.
+                      To have your method officially validated and upload your scores to the leaderboard,
+                      please follow the
+                      <a
+                        href="https://docs.google.com/document/d/1sCobAqJZcko-Vl3biOycwvCIR7kTwBPrhsgVfvaX1Fg/edit?usp=sharing"
+                        style="text-decoration: underline; color: #B03052"
+                        >submission guidance</a
+                      >.
+                    </li>
+                  </ul>
+                </div>
+
                 </div>
               </div>
             </div>
@@ -628,7 +709,7 @@
             <div class="list-group-item">
               <h4>Acknowledgement</h4>
               <p align="left">
-                We thank Snowflake for their generous support in hosting the Spider 2.0 Challenge. We also thank Tianbao Xie, Yiheng Xu, Fan Zhou, Yuting Lan, Per Jacobsson, Yiming Huang, Canwen Xu, Zhewei Yao, and Binyuan Hui for their helpful feedback on this work. The leaderboard submission guidelines are greatly inspired by <a href="https://bird-bench.github.io/">BIRD-SQL</a>, and we thank them for their contributions.
+                We thank Snowflake for their generous support in hosting the Spider 2.0 Challenge. We also thank Tianbao Xie, Yiheng Xu, Fan Zhou, Yuting Lan, Per Jacobsson, Yiming Huang, Canwen Xu, Zhewei Yao, and Binyuan Hui for their helpful feedback on this work. The website and submission guidelines are greatly inspired by <a href="https://bird-bench.github.io/">BIRD-SQL</a>, and we thank them for their contributions.
               </p>
               
               <div style="text-align: center;">
