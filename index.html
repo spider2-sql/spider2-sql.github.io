@@ -27,6 +27,11 @@
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+
     <link
       href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
       rel="stylesheet"
@@ -231,17 +236,18 @@
         min-width: 50% !important;
       }
 
-      .btn-d {  
-        color: #fff;
+        .btn-d {  
+        color: #155E95;
         font-family: 'Lato', sans-serif;
         font-size: 18px;
         font-weight: 1000;
         width: 100%;
         text-transform: none;
-        background-color: #155E95;
+        background-color: #EAF2FA;
+        border: 2px solid #155E95;
         border-radius: 50px; 
         display: inline-block;
-      } 
+      }
 
       .btn-d:hover {
           background-color: #FF6969;
@@ -420,41 +426,44 @@
                 This challenge calls for models to interact with complex SQL workflow environments, process extremely long contexts, perform intricate reasoning, and generate multiple SQL queries with diverse operations, often exceeding 100 lines, which goes far beyond traditional text-to-SQL challenges.
               </p>
               <br>
-              <div id="button-group">
-                
-                <div class="button-row">
-                  <a
-                    href="https://arxiv.org/abs/2411.07763"
-                    target="_blank"
-                  >
-                    <button type="button" class="btn btn-d">Paper</button>
-                  </a>
-                </div>
-                <div class="button-row">
-                  <a
-                    href="https://github.com/xlang-ai/Spider2"
-                    target="_blank"
-                  >
-                    <button type="button" class="btn btn-d">Code</button>
-                  </a>
-                </div>
-                <div class="button-row">
-                  <a
-                    href="https://github.com/xlang-ai/Spider2/tree/main/spider2-snow"
-                    target="_blank"
-                  >
-                    <button type="button" class="btn btn-d">Data</button>
-                  </a>
-                </div>
-                <div class="button-row">
-                  <a
-                    href="https://x.com/XLangNLP/status/1865896912555225587"
-                    target="_blank"
-                  >
-                    <button type="button" class="btn btn-d">Twitter</button>
-                  </a>
-                </div>
+
+
+              <div id="button-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <a href="https://arxiv.org/abs/2411.07763" target="_blank">
+                  <button type="button" class="btn btn-d">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Paper</span>
+                  </button>
+                </a>
+                <a href="https://github.com/xlang-ai/Spider2" target="_blank">
+                  <button type="button" class="btn btn-d">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </button>
+                </a>
+                <a href="https://github.com/xlang-ai/Spider2/tree/main/spider2-snow" target="_blank">
+                  <button type="button" class="btn btn-d">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </button>
+                </a>
+                <a href="https://x.com/XLangNLP/status/1865896912555225587" target="_blank">
+                  <button type="button" class="btn btn-d">
+                    <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                    <span>Twitter</span>
+                  </button>
+                </a>
               </div>
+
+
             </div>
             <style>
               .scroll-container {
@@ -618,7 +627,7 @@
             </div>
             <div class="list-group-item">
               <h4>Data Examples</h4>
-              <img src="images/homepage_examples.png" alt="test image" width="400">
+              <img src="images/homepage_examples.png" alt="test image" width="450">
 
             <!-- <p align="left">
               <strong>Query-level Task:</strong> we provide the Spider 2.0-lite setting for almost all examples of
