@@ -319,6 +319,8 @@
       }
       
       .table-wrapper {
+        width: 100%;
+        max-width: 100%;
         display: block;
         width: auto;
         padding: 0.5rem;
@@ -327,12 +329,18 @@
       /* Leaderboard table styling */
       #ex-table {
         max-width: 100%;
+        table-layout: auto; 
+        border-collapse: collapse;
         margin: 0 auto;
       }
       /* Center all header and cell content */
-      #ex-table th, #ex-table td {
-        text-align: center;
-        vertical-align: middle;
+
+      #ex-table th,
+      #ex-table td {
+          width: auto;
+          padding: 10px;
+          text-align: center;
+          vertical-align: middle;
       }
       
       /* Custom cell classes */
@@ -702,7 +710,7 @@
               <table class="table" id="ex-table">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col" rowspan="1"></th>
+                    <th scope="col" rowspan="1">Rank</th>
                     <th
                       scope="col"
                       rowspan="1"
