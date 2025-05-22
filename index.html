@@ -522,6 +522,51 @@
                           border-radius: 5px;
                         "
                       >
+                        <strong style="color: #ffe7ce">2025-05-22:</strong>
+                      </span>
+                      We have created a new task setting, Spider2-DBT, and removed the original Spider2 setting. 
+                      <a
+                        href="https://github.com/xlang-ai/Spider2/tree/main/spider2-dbt"
+                        style="text-decoration: underline; color: #B03052"
+                        >Spider2-dbt</a
+                      >
+                      consists of only 68 tasks, enabling quick and smooth benchmarking with 
+                      <a
+                        href="https://github.com/xlang-ai/Spider2/tree/main/methods/spider-agent-dbt"
+                        style="text-decoration: underline; color: #B03052"
+                        >spider-agent-dbt</a
+                      >
+                      . 
+                      It is a comprehensive, repository-level text-to-SQL task.
+                    </li>
+                    <li style="list-style-type: none">
+                      <span
+                        style="
+                          background-color: #B03052;
+                          color: white;
+                          padding: 2px 4px;
+                          border-radius: 5px;
+                        "
+                      >
+                        <strong style="color: #ffe7ce">2025-04-20:</strong>
+                      </span>
+                      We provide the 
+                      <a
+                        href="https://github.com/xlang-ai/Spider2/tree/main/methods/gold-tables"
+                        style="text-decoration: underline; color: #B03052"
+                        >ground-truth tables</a
+                      >
+                      for spider2-lite and spider2-snow to help quick benchmarking and analysis. However, when using this setting, you must indicate that you are using oracle tables.
+                    </li>
+                    <li style="list-style-type: none">
+                      <span
+                        style="
+                          background-color: #B03052;
+                          color: white;
+                          padding: 2px 4px;
+                          border-radius: 5px;
+                        "
+                      >
                         <strong style="color: #ffe7ce">2025-01-10:</strong>
                       </span>
                       Please refer to the
@@ -621,6 +666,12 @@
                 </div>
               </div>
             </div>
+            <div class="list-group-item">
+              <h4>Milestone</h4>
+              <p align="left">
+                As of now, all methods combined can solve 63.8% (349/547) of the examples in Spider 2.0!
+              </p>
+            </div>
             <div class="list-group-item" id="illustration">
               <h4>Why Spider 2.0?</h4>
               <p align="left">
@@ -672,11 +723,11 @@
                         <td>Some cost incurred</td>
                     </tr>
                     <tr>
-                      <td><strong>Spider 2.0</strong></td>
+                      <td><strong>Spider 2.0-DBT</strong></td>
                       <td>Code agent task</td>
-                      <td>632</td>
-                      <td>BigQuery(214), Snowflake(198), Postgres(10), ClickHouse(7), SQLite(135), DuckDB (DBT)(68)</td>
-                      <td>Some cost incurred</td>
+                      <td>68</td>
+                      <td>DuckDB (DBT)(68)</td>
+                      <td><span style="color: red;">NO COST!😊</span></td>
                     </tr>
                 </table>
 
@@ -718,7 +769,7 @@
             <div class="list-group-item">
               <h4>Acknowledgement</h4>
               <p align="left">
-                We thank Snowflake for their generous support in hosting the Spider 2.0 Challenge. We also thank Tianbao Xie, Yiheng Xu, Fan Zhou, Yuting Lan, Per Jacobsson, Yiming Huang, Canwen Xu, Zhewei Yao, and Binyuan Hui for their helpful feedback on this work. The website and submission guidelines are greatly inspired by <a href="https://bird-bench.github.io/">BIRD-SQL</a>, and we thank them for their contributions.
+                We thank Snowflake for their generous support in hosting the Spider 2.0 Challenge. We also thank Minghang Deng, Tianbao Xie, Yiheng Xu, Fan Zhou, Yuting Lan, Per Jacobsson, Yiming Huang, Canwen Xu, Zhewei Yao, and Binyuan Hui for their helpful feedback on this work. The website and submission guidelines are greatly inspired by <a href="https://bird-bench.github.io/">BIRD-SQL</a>, and we thank them for their contributions.
               </p>
               
               <div style="text-align: center;">
@@ -791,7 +842,7 @@
                 <a class="nav-link" href="#" data-target="spiderLite">Spider 2.0-lite</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" data-target="spiderMain">Spider 2.0</a>
+                <a class="nav-link" href="#" data-target="spiderMain">Spider 2.0-DBT</a>
               </li>
             </ul>
             
@@ -1205,13 +1256,9 @@
             <!-- Spider 2.0 -->
             <div id="spiderMain" class="list-group-item spider-tab" style="display: none;">
               <p>
-                <strong>Spider 2.0</strong> is a comprehensive code generation agent task that includes
-                <strong>632</strong> examples. The agent has to interactively explore various types of databases, 
-                such as <em><u>BigQuery</u></em>, <em><u>Snowflake</u></em>, <em><u>Postgres</u></em>, 
-                <em><u>ClickHouse</u></em>, <em><u>DuckDB</u></em>, and <em><u>SQLite</u></em>. It is required to
-                engage with complex SQL workflows, process extensive contexts, perform intricate reasoning, 
-                and generate multiple SQL queries with diverse operations, often exceeding 100 lines across multiple
-                interactions.
+                <strong><a href="https://github.com/xlang-ai/Spider2/tree/main/spider2-dbt" target="_blank">Spider 2.0-DBT</a></strong>  is a comprehensive code generation agent task that includes
+                <strong>68</strong> examples.
+                Solving these tasks requires models to understand project code, navigating complex SQL environments and handling long contexts, surpassing traditional text-to-SQL challenges.
               </p>
               <div class="table-wrapper">
                 <table class="table" id="ex-table-main">
@@ -1224,12 +1271,22 @@
                   </thead>
                   <tbody>
                     <!-- Rank 1 -->
+
+                    <tr data-date="May 22, 2025">
+                      <td scope="row" class="align-middle text-center rank-cell"></td>
+                      <td class="align-middle text-center">
+                        Spider-Agent + Claude-3.7-Sonnet-20250219
+                      </td>
+                      <td class="align-middle text-center"><b>16.18</b></td>
+                    </tr>
+
+
                     <tr data-date="Nov 2, 2024">
                       <td scope="row" class="align-middle text-center rank-cell"></td>
                       <td class="align-middle text-center">
                         Spider-Agent + o1-preview
                       </td>
-                      <td class="align-middle text-center"><b>17.01</b></td>
+                      <td class="align-middle text-center"><b>13.24</b></td>
                     </tr>
                   
                     <tr data-date="Nov 2, 2024">
@@ -1237,58 +1294,9 @@
                       <td class="align-middle text-center">
                         Spider-Agent + GPT-4o
                       </td>
-                      <td class="align-middle text-center"><b>10.13</b></td>
-                    </tr>
-                  
-                    <tr data-date="Nov 2, 2024">
-                      <td scope="row" class="align-middle text-center rank-cell"></td>
-                      <td class="align-middle text-center">
-                        Spider-Agent + Claude-3.5-Sonnet
-                      </td>
-                      <td class="align-middle text-center"><b>9.02</b></td>
-                    </tr>
-                  
-                    <tr data-date="Nov 2, 2024">
-                      <td scope="row" class="align-middle text-center rank-cell"></td>
-                      <td class="align-middle text-center">
-                        Spider-Agent + GPT-4
-                      </td>
-                      <td class="align-middle text-center"><b>8.86</b></td>
-                    </tr>
-                  
-                    <tr data-date="Nov 2, 2024">
-                      <td scope="row" class="align-middle text-center rank-cell"></td>
-                      <td class="align-middle text-center">
-                        Spider-Agent + Qwen2.5-72B
-                      </td>
-                      <td class="align-middle text-center"><b>6.17</b></td>
-                    </tr>
-                  
-                    <tr data-date="Nov 2, 2024">
-                      <td scope="row" class="align-middle text-center rank-cell"></td>
-                      <td class="align-middle text-center">
-                        Spider-Agent + DeepSeek-V2.5
-                      </td>
-                      <td class="align-middle text-center"><b>5.22</b></td>
-                    </tr>
-                  
-                    <tr data-date="Nov 2, 2024">
-                      <td scope="row" class="align-middle text-center rank-cell"></td>
-                      <td class="align-middle text-center">
-                        Spider-Agent + Gemini-Pro-1.5
-                      </td>
-                      <td class="align-middle text-center"><b>2.53</b></td>
-                    </tr>
-                  
-                    <tr data-date="Nov 2, 2024">
-                      <td scope="row" class="align-middle text-center rank-cell"></td>
-                      <td class="align-middle text-center">
-                        Spider-Agent + Llama-3.1-405B
-                      </td>
-                      <td class="align-middle text-center"><b>2.21</b></td>
+                      <td class="align-middle text-center"><b>7.35</b></td>
                     </tr>
                   </tbody>
-                  
                 </table>
               </div>
             </div>
