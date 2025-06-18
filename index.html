@@ -871,8 +871,8 @@
               <p>
                 <strong><a href="https://github.com/xlang-ai/Spider2/tree/main/spider2-snow" target="_blank">Spider 2.0-Snow</a></strong> is a self-contained text-to-SQL task that includes well-prepared database
                 metadata and documentation, includes <strong>547</strong> examples, all hosted on
-                <em><u>Snowflake</u></em>, which offers participants free quotas. If you want to test performance on
-                <em><u>a single SQL dialect</u></em>, don't hesitate to use <strong>Spider 2.0-Snow</strong>.
+                <em><u>Snowflake</u></em>, which offers participants free quotas. <br>
+                Methods with <strong>-*</strong> use special settings (ground-truth tables) and are not included in the ranking.
               </p>              
               <div class="table-wrapper">
                 <table class="table" id="ex-table-snow">
@@ -886,7 +886,7 @@
                   <tbody>
 
 
-                    <tr data-date="Jun 15, 2025">
+                    <tr data-date="Jun 15, 2025" data-special-rank="true">
                       <td scope="row" class="align-middle text-center rank-cell"></td>
                       <td class="align-middle text-center">
                         ByteBrain-Agent (w GT Tables)<br>
@@ -1338,11 +1338,22 @@
           // 遍历所有 id 以 ex-table- 开头的表
           document.querySelectorAll('table[id^="ex-table-"]').forEach(function(table) {
             const rows = table.querySelectorAll('tbody tr');
-            rows.forEach((row, index) => {
+            let regularRank = 1; // 用于记录正常排名
+            
+            rows.forEach((row) => {
               const date = row.getAttribute('data-date');
               const rankCell = row.querySelector('.rank-cell');
+              const isSpecialRank = row.getAttribute('data-special-rank') === 'true';
+              
               if (rankCell) {
-                rankCell.innerHTML = `<b>${index + 1}</b><br><span class="badge badge-secondary">${date}</span>`;
+                if (isSpecialRank) {
+                  // 特殊排名显示为 "-"
+                  rankCell.innerHTML = `<b>-*</b><br><span class="badge badge-secondary">${date}</span>`;
+                } else {
+                  // 正常排名
+                  rankCell.innerHTML = `<b>${regularRank}</b><br><span class="badge badge-secondary">${date}</span>`;
+                  regularRank++;
+                }
               }
             });
           });
